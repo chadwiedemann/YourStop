@@ -1,18 +1,18 @@
 //
-//  OpeningViewController.m
+//  ConfirmDestinationViewController.m
 //  YourStop
 //
 //  Created by chutima mungmee on 11/15/16.
 //  Copyright © 2016 Chad Wiedemann LLC. All rights reserved.
 //
 
-#import "OpeningViewController.h"
+#import "ConfirmDestinationViewController.h"
 
-@interface OpeningViewController ()
+@interface ConfirmDestinationViewController ()
 
 @end
 
-@implementation OpeningViewController
+@implementation ConfirmDestinationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

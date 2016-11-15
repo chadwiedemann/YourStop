@@ -1,18 +1,18 @@
 //
-//  OpeningViewController.m
+//  SleepingViewController.m
 //  YourStop
 //
 //  Created by chutima mungmee on 11/15/16.
 //  Copyright © 2016 Chad Wiedemann LLC. All rights reserved.
 //
 
-#import "OpeningViewController.h"
+#import "SleepingViewController.h"
 
-@interface OpeningViewController ()
+@interface SleepingViewController ()
 
 @end
 
-@implementation OpeningViewController
+@implementation SleepingViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -1,18 +1,18 @@
 //
-//  OpeningViewController.m
+//  SettingsViewController.m
 //  YourStop
 //
 //  Created by chutima mungmee on 11/15/16.
 //  Copyright © 2016 Chad Wiedemann LLC. All rights reserved.
 //
 
-#import "OpeningViewController.h"
+#import "SettingsViewController.h"
 
-@interface OpeningViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation OpeningViewController
+@implementation SettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
