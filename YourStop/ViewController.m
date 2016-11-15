@@ -21,6 +21,7 @@
     self.mapView.userTrackingMode = YES;
     
     NSLog(@"Chutima");
+    NSLog(@"chad test");
     
 
 }
