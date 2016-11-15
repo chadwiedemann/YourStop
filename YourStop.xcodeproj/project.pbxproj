@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		205E3F581DDB7CF400957764 /* OpeningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 205E3F571DDB7CF400957764 /* OpeningViewController.m */; };
+		205E3F5B1DDB8FF100957764 /* Destination.m in Sources */ = {isa = PBXBuildFile; fileRef = 205E3F5A1DDB8FF100957764 /* Destination.m */; };
 		D83C0A0C1DC79B6F00B41470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0B1DC79B6F00B41470 /* main.m */; };
 		D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0E1DC79B6F00B41470 /* AppDelegate.m */; };
 		D83C0A121DC79B6F00B41470 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A111DC79B6F00B41470 /* ViewController.m */; };
@@ -23,6 +24,8 @@
 /* Begin PBXFileReference section */
 		205E3F561DDB7CF400957764 /* OpeningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningViewController.h; sourceTree = "<group>"; };
 		205E3F571DDB7CF400957764 /* OpeningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningViewController.m; sourceTree = "<group>"; };
+		205E3F591DDB8FF100957764 /* Destination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Destination.h; sourceTree = "<group>"; };
+		205E3F5A1DDB8FF100957764 /* Destination.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Destination.m; sourceTree = "<group>"; };
 		D83C0A071DC79B6F00B41470 /* YourStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83C0A0B1DC79B6F00B41470 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D83C0A0D1DC79B6F00B41470 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 				D83C0A101DC79B6F00B41470 /* ViewController.h */,
 				D83C0A111DC79B6F00B41470 /* ViewController.m */,
 				D83C0A131DC79B6F00B41470 /* Main.storyboard */,
+				205E3F591DDB8FF100957764 /* Destination.h */,
+				205E3F5A1DDB8FF100957764 /* Destination.m */,
 				205E3F561DDB7CF400957764 /* OpeningViewController.h */,
 				205E3F571DDB7CF400957764 /* OpeningViewController.m */,
 				D83C0A191DC79B6F00B41470 /* Assets.xcassets */,
@@ -183,6 +188,7 @@
 				D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */,
 				D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */,
 				205E3F581DDB7CF400957764 /* OpeningViewController.m in Sources */,
+				205E3F5B1DDB8FF100957764 /* Destination.m in Sources */,
 				D83C0A0C1DC79B6F00B41470 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
