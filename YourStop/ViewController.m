@@ -19,6 +19,9 @@
     self.mapView.delegate = self;
     [self.mapView setShowsUserLocation:YES];
     self.mapView.userTrackingMode = YES;
+    
+    NSLog(@"Chutima");
+    
 
 }
 
