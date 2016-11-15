@@ -1,18 +1,18 @@
 //
-//  OpeningViewController.m
+//  DestinationTableViewController.m
 //  YourStop
 //
 //  Created by chutima mungmee on 11/15/16.
 //  Copyright © 2016 Chad Wiedemann LLC. All rights reserved.
 //
 
-#import "OpeningViewController.h"
+#import "DestinationTableViewController.h"
 
-@interface OpeningViewController ()
+@interface DestinationTableViewController ()
 
 @end
 
-@implementation OpeningViewController
+@implementation DestinationTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

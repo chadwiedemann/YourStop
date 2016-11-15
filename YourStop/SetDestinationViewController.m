@@ -1,18 +1,18 @@
 //
-//  OpeningViewController.m
+//  SetDestinationViewController.m
 //  YourStop
 //
 //  Created by chutima mungmee on 11/15/16.
 //  Copyright © 2016 Chad Wiedemann LLC. All rights reserved.
 //
 
-#import "OpeningViewController.h"
+#import "SetDestinationViewController.h"
 
-@interface OpeningViewController ()
+@interface SetDestinationViewController ()
 
 @end
 
-@implementation OpeningViewController
+@implementation SetDestinationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
