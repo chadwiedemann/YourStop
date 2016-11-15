@@ -19,17 +19,7 @@
     self.mapView.delegate = self;
     [self.mapView setShowsUserLocation:YES];
     self.mapView.userTrackingMode = YES;
-    /*self.locationManager = [[CLLocationManager alloc]init];
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    self.locationManager.distanceFilter = kCLLocationAccuracyKilometer;
-    
-    CLLocation *location = [self.locationManager location];
-    
-    coordinate = [location coordinate];
-    
-    self.mapView.region = MKCoordinateRegionMakeWithDistance(coordinate, 1000, 1000);
-    */
+
 }
 
 
