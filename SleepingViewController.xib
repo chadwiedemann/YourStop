@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +15,36 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_monster_sleeping" translatesAutoresizingMaskIntoConstraints="NO" id="lRZ-4g-fwb">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="Adn-SF-TT3"/>
+                        <constraint firstAttribute="height" constant="250" id="THN-0s-e1o"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="get some rest now zZZZ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zN-WF-pog">
+                    <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="20"/>
+                    <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I can relax and" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zuk-cz-x27">
+                    <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="25"/>
+                    <color key="textColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="lRZ-4g-fwb" firstAttribute="top" secondItem="1zN-WF-pog" secondAttribute="bottom" constant="5" id="IbN-kn-e09"/>
+                <constraint firstItem="lRZ-4g-fwb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UnA-BZ-R5b"/>
+                <constraint firstItem="1zN-WF-pog" firstAttribute="top" secondItem="Zuk-cz-x27" secondAttribute="bottom" constant="5" id="YGM-xp-AEJ"/>
+                <constraint firstItem="Zuk-cz-x27" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ljl-hL-MUV"/>
+                <constraint firstItem="1zN-WF-pog" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="xNY-Ip-Dcx"/>
+                <constraint firstItem="lRZ-4g-fwb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zJD-EW-g7q"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="green_monster_sleeping" width="256" height="256"/>
+    </resources>
 </document>

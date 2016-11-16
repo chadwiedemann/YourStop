@@ -7,6 +7,7 @@
 //
 
 #import "ConfirmDestinationViewController.h"
+#import "SleepingViewController.h"
 
 @interface ConfirmDestinationViewController ()
 
@@ -16,7 +17,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    // Set up the locationManager
+    self.locationManager = [[CLLocationManager alloc]init];
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager setDelegate:self];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    
+    // set up the pin for the selected location
+    CLLocationCoordinate2D coordinates = self.selectedLocation.destinationCoordinate;
+    
+    // Make the annotation for the selected location
+    MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
+    MKCoordinateRegion region = MKCoordinateRegionMake(coordinates, span);
+    
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    [annotation setCoordinate:coordinates];
+    
+    [self.maps setRegion:region];
+    [self.maps addAnnotation:annotation];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +55,10 @@
 }
 */
 
+- (IBAction)btnStartSleeping:(id)sender {
+    
+    SleepingViewController *sleepingVC = [[SleepingViewController alloc]initWithNibName:@"SleepingViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:sleepingVC animated:YES];
+}
 @end
