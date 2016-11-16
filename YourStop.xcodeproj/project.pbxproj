@@ -20,6 +20,8 @@
 		205E3F781DDBB20900957764 /* ConfirmDestinationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205E3F761DDBB20900957764 /* ConfirmDestinationViewController.xib */; };
 		205E3F7D1DDBB26300957764 /* SleepingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 205E3F7B1DDBB26300957764 /* SleepingViewController.m */; };
 		205E3F7E1DDBB26300957764 /* SleepingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205E3F7C1DDBB26300957764 /* SleepingViewController.xib */; };
+		205E3F831DDBBA0E00957764 /* DestinationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 205E3F811DDBBA0E00957764 /* DestinationTableViewCell.m */; };
+		205E3F841DDBBA0E00957764 /* DestinationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205E3F821DDBBA0E00957764 /* DestinationTableViewCell.xib */; };
 		D83C0A0C1DC79B6F00B41470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0B1DC79B6F00B41470 /* main.m */; };
 		D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0E1DC79B6F00B41470 /* AppDelegate.m */; };
 		D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A161DC79B6F00B41470 /* YourStop.xcdatamodeld */; };
@@ -51,6 +53,9 @@
 		205E3F7A1DDBB26300957764 /* SleepingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SleepingViewController.h; path = ../SleepingViewController.h; sourceTree = "<group>"; };
 		205E3F7B1DDBB26300957764 /* SleepingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SleepingViewController.m; path = ../SleepingViewController.m; sourceTree = "<group>"; };
 		205E3F7C1DDBB26300957764 /* SleepingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SleepingViewController.xib; path = ../SleepingViewController.xib; sourceTree = "<group>"; };
+		205E3F801DDBBA0E00957764 /* DestinationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationTableViewCell.h; sourceTree = "<group>"; };
+		205E3F811DDBBA0E00957764 /* DestinationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationTableViewCell.m; sourceTree = "<group>"; };
+		205E3F821DDBBA0E00957764 /* DestinationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationTableViewCell.xib; sourceTree = "<group>"; };
 		D83C0A071DC79B6F00B41470 /* YourStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83C0A0B1DC79B6F00B41470 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D83C0A0D1DC79B6F00B41470 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -104,6 +109,9 @@
 				205E3F611DDBB10000957764 /* DestinationTableViewController.h */,
 				205E3F621DDBB10000957764 /* DestinationTableViewController.m */,
 				205E3F631DDBB10000957764 /* DestinationTableViewController.xib */,
+				205E3F801DDBBA0E00957764 /* DestinationTableViewCell.h */,
+				205E3F811DDBBA0E00957764 /* DestinationTableViewCell.m */,
+				205E3F821DDBBA0E00957764 /* DestinationTableViewCell.xib */,
 			);
 			name = DestinationTableView;
 			sourceTree = "<group>";
@@ -259,6 +267,7 @@
 				205E3F781DDBB20900957764 /* ConfirmDestinationViewController.xib in Resources */,
 				205E3F6F1DDBB15100957764 /* SettingsViewController.xib in Resources */,
 				205E3F6A1DDBB12900957764 /* SetDestinationViewController.xib in Resources */,
+				205E3F841DDBBA0E00957764 /* DestinationTableViewCell.xib in Resources */,
 				205E3F601DDBB0CC00957764 /* OpeningViewController.xib in Resources */,
 				D83C0A1D1DC79B6F00B41470 /* LaunchScreen.storyboard in Resources */,
 				D83C0A1A1DC79B6F00B41470 /* Assets.xcassets in Resources */,
@@ -278,6 +287,7 @@
 				D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */,
 				205E3F6E1DDBB15100957764 /* SettingsViewController.m in Sources */,
 				D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */,
+				205E3F831DDBBA0E00957764 /* DestinationTableViewCell.m in Sources */,
 				205E3F5B1DDB8FF100957764 /* Destination.m in Sources */,
 				205E3F7D1DDBB26300957764 /* SleepingViewController.m in Sources */,
 				205E3F5F1DDBB0CC00957764 /* OpeningViewController.m in Sources */,

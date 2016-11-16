@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DestinationTableViewController : UIViewController
+@interface DestinationTableViewController : UIViewController 
+
+@property (nonatomic, strong) NSMutableArray *destinationsArray;
+
+@property (weak, nonatomic) IBOutlet UITableView *destinationTableView;
+@property (weak, nonatomic) IBOutlet UIView *emptyView;
+
 
 @end
