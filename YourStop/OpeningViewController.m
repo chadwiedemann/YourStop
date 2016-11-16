@@ -7,6 +7,8 @@
 //
 
 #import "OpeningViewController.h"
+#import "DestinationTableViewController.h"
+#import "SetDestinationViewController.h"
 
 @interface OpeningViewController ()
 
@@ -17,6 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // Set the navigation bar to color
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:87.0/255 green:158.0/255 blue:38.0/255 alpha:1.0];
+    
+    // Set the navigation item to color
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +44,20 @@
 }
 */
 
+
+- (IBAction)btnSavedLocation:(id)sender {
+    
+    // Create the next View controller
+    DestinationTableViewController *destinationTableVC = [[DestinationTableViewController alloc]initWithNibName:@"DestinationTableViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:destinationTableVC animated:YES];
+
+}
+
+- (IBAction)btnNewLocation:(id)sender {
+    
+    SetDestinationViewController *setDestinationVC = [[SetDestinationViewController alloc]initWithNibName:@"SetDestinationViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:setDestinationVC animated:YES];
+}
 @end

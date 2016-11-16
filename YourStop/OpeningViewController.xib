@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +15,60 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YourStop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef9-Js-O7A">
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                    <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBird" translatesAutoresizingMaskIntoConstraints="NO" id="Lbp-nZ-z9S">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="UbH-ul-bLy"/>
+                        <constraint firstAttribute="height" constant="120" id="ns8-2X-Pb2"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U3-mK-0rR">
+                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="Saved location"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnSavedLocation:" destination="-1" eventType="touchUpInside" id="Eet-pU-y83"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjf-cV-dtW">
+                    <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="New location"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnNewLocation:" destination="-1" eventType="touchUpInside" id="Rmw-h6-JR9"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="8U3-mK-0rR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4E7-z3-73T"/>
+                <constraint firstItem="Gjf-cV-dtW" firstAttribute="top" secondItem="8U3-mK-0rR" secondAttribute="bottom" constant="20" id="7mW-aM-qyW"/>
+                <constraint firstItem="Gjf-cV-dtW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BoK-GT-wEm"/>
+                <constraint firstItem="ef9-Js-O7A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="Cq6-pe-J5U"/>
+                <constraint firstItem="Lbp-nZ-z9S" firstAttribute="top" secondItem="ef9-Js-O7A" secondAttribute="bottom" constant="50" id="NIT-DU-6yd"/>
+                <constraint firstItem="ef9-Js-O7A" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n1K-ge-X4X"/>
+                <constraint firstItem="8U3-mK-0rR" firstAttribute="top" secondItem="Lbp-nZ-z9S" secondAttribute="bottom" constant="50" id="nHQ-7X-6hC"/>
+                <constraint firstItem="Lbp-nZ-z9S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="phu-dt-6xr"/>
+            </constraints>
+            <point key="canvasLocation" x="-60" y="-73"/>
         </view>
     </objects>
+    <resources>
+        <image name="blueBird" width="64" height="64"/>
+    </resources>
 </document>
