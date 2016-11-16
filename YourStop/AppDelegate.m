@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "OpeningViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Set the root view controller
+    UIViewController *rootController = [[OpeningViewController alloc]initWithNibName:@"OpeningViewController" bundle:nil];
+    
+    self.navigationController = [[UINavigationController alloc]initWithRootViewController:rootController];
+    
+    self.window = [[UIWindow alloc]
+                   initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window setRootViewController:self.navigationController];
+    [self.window makeKeyAndVisible];
+    
+    
     return YES;
 }
 
