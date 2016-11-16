@@ -17,18 +17,21 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YourStop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef9-Js-O7A">
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
-                    <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="40"/>
+                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blueBird" translatesAutoresizingMaskIntoConstraints="NO" id="Lbp-nZ-z9S">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yourStopLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Lbp-nZ-z9S">
                     <constraints>
-                        <constraint firstAttribute="width" constant="120" id="UbH-ul-bLy"/>
-                        <constraint firstAttribute="height" constant="120" id="ns8-2X-Pb2"/>
+                        <constraint firstAttribute="width" constant="150" id="UbH-ul-bLy"/>
+                        <constraint firstAttribute="height" constant="150" id="ns8-2X-Pb2"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U3-mK-0rR">
                     <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="sSf-dZ-ivR"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
                     <state key="normal" title="Saved location"/>
                     <userDefinedRuntimeAttributes>
@@ -41,9 +44,14 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjf-cV-dtW">
-                    <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="fB8-NX-UnZ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                    <state key="normal" title="New location"/>
+                    <state key="normal" title="New location">
+                        <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="5"/>
@@ -56,9 +64,9 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="8U3-mK-0rR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4E7-z3-73T"/>
+                <constraint firstItem="8U3-mK-0rR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="6.5" id="4E7-z3-73T"/>
                 <constraint firstItem="Gjf-cV-dtW" firstAttribute="top" secondItem="8U3-mK-0rR" secondAttribute="bottom" constant="20" id="7mW-aM-qyW"/>
-                <constraint firstItem="Gjf-cV-dtW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BoK-GT-wEm"/>
+                <constraint firstItem="Gjf-cV-dtW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="7" id="BoK-GT-wEm"/>
                 <constraint firstItem="ef9-Js-O7A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="150" id="Cq6-pe-J5U"/>
                 <constraint firstItem="Lbp-nZ-z9S" firstAttribute="top" secondItem="ef9-Js-O7A" secondAttribute="bottom" constant="50" id="NIT-DU-6yd"/>
                 <constraint firstItem="ef9-Js-O7A" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n1K-ge-X4X"/>
@@ -69,6 +77,6 @@
         </view>
     </objects>
     <resources>
-        <image name="blueBird" width="64" height="64"/>
+        <image name="yourStopLogo" width="256" height="256"/>
     </resources>
 </document>

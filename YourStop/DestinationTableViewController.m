@@ -9,6 +9,8 @@
 #import "DestinationTableViewController.h"
 #import "DestinationTableViewCell.h"
 #import "Destination.h"
+#import "SetDestinationViewController.h"
+#import "ConfirmDestinationViewController.h"
 
 @interface DestinationTableViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -29,9 +31,23 @@
     home.destinationCoordinate = CLLocationCoordinate2DMake(40.7061403, -74.014399);
     home.miles = 5;
     
+    Destination *work = [[Destination alloc]init];
+    work.destinationName = @"Work";
+    work.miles = 1;
+    
     self.destinationsArray = [[NSMutableArray alloc]init];
     
     [self.destinationsArray addObject:home];
+    [self.destinationsArray addObject:work];
+    
+    // Set up the navigation bar
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewLocation)];
+    
+    self.navigationItem.rightBarButtonItem = addButton;
+    
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editLocation)];
+    
+    self.navigationItem.leftBarButtonItem = editButton;
     
     // Allow the select the cell during the editing mode
     self.destinationTableView.allowsSelectionDuringEditing = YES;
@@ -93,15 +109,63 @@
     
     Destination *eachDestination = [self.destinationsArray objectAtIndex:indexPath.row];
     cell.lblDestinationName.text = eachDestination.destinationName;
-    cell.lblDistance.text = [NSString stringWithFormat:@"Will awake you %f before your destination", eachDestination.miles];
+    cell.lblDistance.text = [NSString stringWithFormat:@"Will awake you %.1f mile before your destination", eachDestination.miles];
     cell.imageView.image = [UIImage imageNamed:@"google_place_1"];
     
     // ADD accessory type to be able to edit the cell
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
-
     
+}
+
+#pragma mark - Table view delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Destination *destination = self.destinationsArray[indexPath.row];
+    
+    
+    // Create the new view controller
+    // Set it to the confirm destination view controller
+    // Pass the destination object to the next view controller
+    ConfirmDestinationViewController *confirmDestinatinVC = [[ConfirmDestinationViewController alloc]initWithNibName:@"ConfirmDestinationViewController" bundle:nil];
+    
+    confirmDestinatinVC.selectedLocation = destination;
+    
+    [self.navigationController pushViewController:confirmDestinatinVC animated:YES];
+    
+}
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the location on the row
+        [self.destinationsArray removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    
+    [tableView reloadData];
+    
+    if (self.destinationsArray.count == 0) {
+        self.emptyView.hidden = NO;
+    }
+}
+
+#pragma mark - Convenient Functions
+
+-(void)addNewLocation
+{
+    // Create the next view controller
+    SetDestinationViewController *setDestinationVC = [[SetDestinationViewController alloc]initWithNibName:@"SetDestinationViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:setDestinationVC animated:YES];
+    
+}
+
+-(void)editLocation
+{
     
 }
 

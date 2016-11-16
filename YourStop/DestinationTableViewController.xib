@@ -18,7 +18,12 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Kb-XO-gvc">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the destination that you want here..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3r-bz-FdK">
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                    <color key="textColor" red="1" green="0.65388537582885831" blue="0.39159565195059653" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Kb-XO-gvc">
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="RGR-w5-7nd"/>
@@ -69,13 +74,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Z3r-bz-FdK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1d5-VT-qwh"/>
                 <constraint firstAttribute="bottom" secondItem="aLm-3T-rEq" secondAttribute="bottom" id="CPB-qx-fCx"/>
                 <constraint firstAttribute="bottom" secondItem="5Kb-XO-gvc" secondAttribute="bottom" constant="50" id="KI9-XY-68F"/>
                 <constraint firstAttribute="trailing" secondItem="aLm-3T-rEq" secondAttribute="trailing" id="Maa-bz-MVD"/>
                 <constraint firstItem="aLm-3T-rEq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UpT-42-tDZ"/>
+                <constraint firstItem="Z3r-bz-FdK" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="Vm3-qu-luI"/>
                 <constraint firstItem="aLm-3T-rEq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WqR-Nv-th2"/>
+                <constraint firstItem="5Kb-XO-gvc" firstAttribute="top" secondItem="Z3r-bz-FdK" secondAttribute="bottom" constant="10" id="hQv-ZK-0sc"/>
                 <constraint firstItem="5Kb-XO-gvc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="hhV-je-vd3"/>
-                <constraint firstItem="5Kb-XO-gvc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="uYx-Xh-Ckq"/>
                 <constraint firstAttribute="trailing" secondItem="5Kb-XO-gvc" secondAttribute="trailing" constant="10" id="wfv-XH-iVm"/>
             </constraints>
             <point key="canvasLocation" x="32.5" y="133.5"/>
