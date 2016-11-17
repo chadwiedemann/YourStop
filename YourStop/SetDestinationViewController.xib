@@ -1,20 +1,46 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetDestinationViewController">
             <connections>
+                <outlet property="setDestinationMapView" destination="dKT-HN-F4L" id="Sxf-0D-rBv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dKT-HN-F4L">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="425.5"/>
+                </mapView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbn-nZ-xV0">
+                    <rect key="frame" x="0.0" y="433.5" width="320" height="30.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Sbn-nZ-xV0" secondAttribute="bottom" constant="16" id="Djy-NP-ZSF"/>
+                <constraint firstItem="Sbn-nZ-xV0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RG4-oL-zcb"/>
+                <constraint firstAttribute="trailing" secondItem="Sbn-nZ-xV0" secondAttribute="trailing" id="Sme-UR-sjT"/>
+                <constraint firstItem="dKT-HN-F4L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ya9-Jq-ItN"/>
+                <constraint firstItem="Sbn-nZ-xV0" firstAttribute="top" secondItem="dKT-HN-F4L" secondAttribute="bottom" constant="8" id="eRK-p1-moq"/>
+                <constraint firstItem="Sbn-nZ-xV0" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.1" constant="-17.700000000000003" id="q7H-mk-Dhi"/>
+                <constraint firstItem="dKT-HN-F4L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="w0P-Qu-acd"/>
+                <constraint firstAttribute="trailing" secondItem="dKT-HN-F4L" secondAttribute="trailing" id="xIJ-SP-Tam"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
 </document>
