@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SetDestinationViewController.h"
+#import "Destination.h"
 
 @interface SettingsViewController : UIViewController
+
+@property (nonatomic, strong) Destination *editingDestination;
 
 @end
