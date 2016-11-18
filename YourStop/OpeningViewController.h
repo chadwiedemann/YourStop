@@ -10,7 +10,7 @@
 
 @interface OpeningViewController : UIViewController
 
-- (IBAction)startAppBtnPressed:(id)sender;
+//- (IBAction)startAppBtnPressed:(id)sender;
 
 - (IBAction)btnSavedLocation:(id)sender;
 - (IBAction)btnNewLocation:(id)sender;

@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "Destination.h"
+#import "SettingsViewController.h"
 
 @interface SetDestinationViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *setDestinationMapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-
-
+@property (nonatomic, strong) Destination *destinationPin;
+@property CLLocationCoordinate2D userLocation;
 
 
 @end

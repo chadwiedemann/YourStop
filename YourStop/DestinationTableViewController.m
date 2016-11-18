@@ -25,10 +25,10 @@
     self.destinationTableView.delegate = self;
     
     // Test, fake destination object for testing the table view
-    Destination *home = [[Destination alloc]init];
+    Destination *home = [[Destination alloc]initWithLocation:CLLocationCoordinate2DMake(40.7061403, -74.014399)];
     home.destinationName = @"Home";
     // 40.7061403,-74.014399
-    home.destinationCoordinate = CLLocationCoordinate2DMake(40.7061403, -74.014399);
+//    home.destinationCoordinate = CLLocationCoordinate2DMake(40.7061403, -74.014399);
     home.miles = 5;
     
     Destination *work = [[Destination alloc]init];
@@ -45,9 +45,7 @@
     
     self.navigationItem.rightBarButtonItem = addButton;
     
-    UIBarButtonItem *editButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editLocation)];
-    
-    self.navigationItem.leftBarButtonItem = editButton;
+
     
     // Allow the select the cell during the editing mode
     self.destinationTableView.allowsSelectionDuringEditing = YES;
@@ -164,9 +162,6 @@
     
 }
 
--(void)editLocation
-{
-    
-}
+
 
 @end

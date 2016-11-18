@@ -25,7 +25,7 @@
     [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     
     // set up the pin for the selected location
-    CLLocationCoordinate2D coordinates = self.selectedLocation.destinationCoordinate;
+    CLLocationCoordinate2D coordinates = self.selectedLocation.coordinate;
     
     // Make the annotation for the selected location
     MKCoordinateSpan span = MKCoordinateSpanMake(0.1, 0.1);
@@ -37,6 +37,9 @@
     [self.maps setRegion:region];
     [self.maps addAnnotation:annotation];
     
+        UIBarButtonItem *editButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editLocation)];
+    
+        self.navigationItem.rightBarButtonItem = editButton;
     
 }
 
@@ -60,5 +63,10 @@
     SleepingViewController *sleepingVC = [[SleepingViewController alloc]initWithNibName:@"SleepingViewController" bundle:nil];
     
     [self.navigationController pushViewController:sleepingVC animated:YES];
+}
+
+-(void)editLocation
+{
+    
 }
 @end
