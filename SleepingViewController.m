@@ -16,22 +16,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self startSleeping];
+    
 }
+
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self.locationManager = [[CLLocationManager alloc]init];
+    [self.locationManager requestWhenInUseAuthorization];
+    [self.locationManager setDelegate:self];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+    return self;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)startSleeping
+{
+    [NSTimer scheduledTimerWithTimeInterval:30.0f target:self selector:@selector(compareAlarmDistance) userInfo:nil repeats:YES];
+   
 }
-*/
+
+- (void)soundTheAlarm
+{
+   
+    NSLog(@"Time to wakkkkkeeee upppp and create the method to ring the phone");
+}
+
+-(double)milesSettingInMeters
+{
+    return self.destination.miles*1609.34;
+}
+
+-(void)compareAlarmDistance
+{
+    CLLocation *destinationLocation = [[CLLocation alloc]initWithCoordinate:self.destination.coordinate altitude:0 horizontalAccuracy:1 verticalAccuracy:1 timestamp:[NSDate date]];
+    CLLocationDistance metersToDestination = [self.locationManager.location distanceFromLocation:destinationLocation];
+
+    if(metersToDestination < [self milesSettingInMeters]){
+        [self soundTheAlarm];
+    }
+}
 
 @end

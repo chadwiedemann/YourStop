@@ -31,7 +31,8 @@
 -(void)moveToSettingsVC
 {
     SettingsViewController *settingsVC = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:nil];
-    
+      NSLog(@"hello %f",self.destinationPin.coordinate.latitude);
+    settingsVC.editingDestination = self.destinationPin;
     [self.navigationController pushViewController:settingsVC animated:YES];
 }
 
@@ -84,7 +85,9 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     pinView.animatesDrop = YES;
     return pinView;
     }else{
+      
         return nil;
+        
     }
 }
 

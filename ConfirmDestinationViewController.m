@@ -61,7 +61,7 @@
 - (IBAction)btnStartSleeping:(id)sender {
     
     SleepingViewController *sleepingVC = [[SleepingViewController alloc]initWithNibName:@"SleepingViewController" bundle:nil];
-    
+    sleepingVC.destination = self.selectedLocation;
     [self.navigationController pushViewController:sleepingVC animated:YES];
 }
 

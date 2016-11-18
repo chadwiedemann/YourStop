@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    NSLog(@"hello here is data %f",self.editingDestination.coordinate.latitude);
 }
 
 - (void)didReceiveMemoryWarning {
