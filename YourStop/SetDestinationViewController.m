@@ -17,10 +17,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.setDestinationMapView.showsUserLocation = YES;
-    self.setDestinationMapView.delegate = self;
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(moveToSettingsVC)];
     
+    self.navigationItem.rightBarButtonItem = addButton;
+
+    
+    self.setDestinationMapView.showsUserLocation = YES;
+    self.userLocation = self.locationManager.location.coordinate;
+
+    self.setDestinationMapView.delegate = self;
 }
+
+-(void)moveToSettingsVC
+{
+    SettingsViewController *settingsVC = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:nil];
+      NSLog(@"hello %f",self.destinationPin.coordinate.latitude);
+    settingsVC.editingDestination = self.destinationPin;
+    [self.navigationController pushViewController:settingsVC animated:YES];
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.destinationPin = [[Destination alloc]initWithLocation:self.locationManager.location.coordinate];
+    
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.userLocation, 800, 800);
+    [self.setDestinationMapView setRegion:[self.setDestinationMapView regionThatFits:region] animated:YES];
+    
+    [self.setDestinationMapView addAnnotation:self.destinationPin];
+}
+
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,17 +57,39 @@
     return self;
 }
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
-    [self.setDestinationMapView setRegion:[self.setDestinationMapView regionThatFits:region] animated:YES];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
    
 }
 
+
+- (void)mapView:(MKMapView *)mapView
+ annotationView:(MKAnnotationView *)annotationView
+didChangeDragState:(MKAnnotationViewDragState)newState
+   fromOldState:(MKAnnotationViewDragState)oldState
+{
+    
+    if (newState == MKAnnotationViewDragStateEnding)
+    {
+        CLLocationCoordinate2D droppedAt = annotationView.annotation.coordinate;
+        [annotationView.annotation setCoordinate:droppedAt];
+        NSLog(@"Pin dropped at %f,%f", droppedAt.latitude, droppedAt.longitude);
+    }
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id < MKAnnotation >)annotation
+{
+    if([annotation isKindOfClass:[Destination class]]){
+    MKPinAnnotationView *pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"ident"];
+    pinView.draggable = YES;
+    pinView.animatesDrop = YES;
+    return pinView;
+    }else{
+      
+        return nil;
+        
+    }
+}
 
 
 @end

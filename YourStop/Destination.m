@@ -10,4 +10,19 @@
 
 @implementation Destination
 
+@synthesize coordinate;
+
+- (id)initWithLocation:(CLLocationCoordinate2D)coord {
+    self = [super init];
+    if (self) {
+        coordinate = coord;
+    }
+    return self;
+}
+
+- (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate{
+    NSLog(@"got called");
+    coordinate = newCoordinate;
+}
+
 @end
