@@ -38,12 +38,13 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
+    if(!self.destinationPin){
     self.destinationPin = [[Destination alloc]initWithLocation:self.locationManager.location.coordinate];
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.userLocation, 800, 800);
+        [self.setDestinationMapView setRegion:[self.setDestinationMapView regionThatFits:region] animated:YES];
+        [self.setDestinationMapView addAnnotation:self.destinationPin];
+    }
     
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.userLocation, 800, 800);
-    [self.setDestinationMapView setRegion:[self.setDestinationMapView regionThatFits:region] animated:YES];
-    
-    [self.setDestinationMapView addAnnotation:self.destinationPin];
 }
 
 

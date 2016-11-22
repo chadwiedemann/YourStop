@@ -16,6 +16,15 @@
     self = [super init];
     if (self) {
         coordinate = coord;
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if(![defaults integerForKey:@"destinationID"]){
+            [defaults setInteger:1 forKey:@"destinationID"];
+            self.destinationID = 1;
+        }else{
+            self.destinationID = [defaults integerForKey:@"destinationID"]+1;
+            [defaults setInteger:self.destinationID forKey:@"destinationID"];
+        }
     }
     return self;
 }

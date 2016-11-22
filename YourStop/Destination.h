@@ -15,7 +15,6 @@
 {
     CLLocationCoordinate2D coordinate;
 }
-@property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
 - (id)initWithLocation:(CLLocationCoordinate2D)coord;
 - (void)setCoordinate:(CLLocationCoordinate2D)newCoordinate;
 
@@ -23,6 +22,7 @@
 @property double miles;
 @property (nonatomic, strong) NSString *ringTone;
 @property BOOL vibration;
+@property NSInteger destinationID;
 
 
 
