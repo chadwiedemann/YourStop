@@ -10,6 +10,19 @@
 
 @implementation DAO
 
+-(id)init
+{
+    self = [super init];
+    if(self)
+    {
+        self.destinationsArray = [[NSMutableArray alloc]init];
+        
+    }
+    return self;
+}
+
+
+
 + (DAO*)sharedInstanceOfDAO
 {
     // 1
@@ -24,6 +37,7 @@
     });
     return _sharedInstance;
 }
+
 
 
 @end
