@@ -22,11 +22,15 @@
 		205E3F7E1DDBB26300957764 /* SleepingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205E3F7C1DDBB26300957764 /* SleepingViewController.xib */; };
 		205E3F831DDBBA0E00957764 /* DestinationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 205E3F811DDBBA0E00957764 /* DestinationTableViewCell.m */; };
 		205E3F841DDBBA0E00957764 /* DestinationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205E3F821DDBBA0E00957764 /* DestinationTableViewCell.xib */; };
+		20C24A4D1DE36342001B9565 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A4C1DE36342001B9565 /* Launch Screen.storyboard */; };
+		20C24A501DE3EB01001B9565 /* AfricanFunLong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A4F1DE3EB01001B9565 /* AfricanFunLong.mp3 */; };
+		20C24A521DE3EB09001B9565 /* HouseParty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A511DE3EB09001B9565 /* HouseParty.mp3 */; };
+		20C24A541DE3EB11001B9565 /* MrJasonJazz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A531DE3EB11001B9565 /* MrJasonJazz.mp3 */; };
+		20C24A561DE3EB17001B9565 /* Techological.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A551DE3EB17001B9565 /* Techological.mp3 */; };
 		D83C0A0C1DC79B6F00B41470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0B1DC79B6F00B41470 /* main.m */; };
 		D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0E1DC79B6F00B41470 /* AppDelegate.m */; };
 		D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A161DC79B6F00B41470 /* YourStop.xcdatamodeld */; };
 		D83C0A1A1DC79B6F00B41470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83C0A191DC79B6F00B41470 /* Assets.xcassets */; };
-		D83C0A1D1DC79B6F00B41470 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D83C0A1B1DC79B6F00B41470 /* LaunchScreen.storyboard */; };
 		D83D6ACA1DDF8A8300DC35E7 /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = D83D6AC91DDF8A8300DC35E7 /* DAO.m */; };
 		D85114F51DCA8124002742EC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85114F41DCA8124002742EC /* MapKit.framework */; };
 		D85114F71DCA8137002742EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85114F61DCA8137002742EC /* CoreGraphics.framework */; };
@@ -57,13 +61,17 @@
 		205E3F801DDBBA0E00957764 /* DestinationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationTableViewCell.h; sourceTree = "<group>"; };
 		205E3F811DDBBA0E00957764 /* DestinationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationTableViewCell.m; sourceTree = "<group>"; };
 		205E3F821DDBBA0E00957764 /* DestinationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationTableViewCell.xib; sourceTree = "<group>"; };
+		20C24A4C1DE36342001B9565 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		20C24A4F1DE3EB01001B9565 /* AfricanFunLong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AfricanFunLong.mp3; sourceTree = "<group>"; };
+		20C24A511DE3EB09001B9565 /* HouseParty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HouseParty.mp3; sourceTree = "<group>"; };
+		20C24A531DE3EB11001B9565 /* MrJasonJazz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MrJasonJazz.mp3; sourceTree = "<group>"; };
+		20C24A551DE3EB17001B9565 /* Techological.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Techological.mp3; sourceTree = "<group>"; };
 		D83C0A071DC79B6F00B41470 /* YourStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83C0A0B1DC79B6F00B41470 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D83C0A0D1DC79B6F00B41470 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D83C0A0E1DC79B6F00B41470 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D83C0A171DC79B6F00B41470 /* YourStop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YourStop.xcdatamodel; sourceTree = "<group>"; };
 		D83C0A191DC79B6F00B41470 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D83C0A1C1DC79B6F00B41470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D83C0A1E1DC79B6F00B41470 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D83D6AC81DDF8A8300DC35E7 /* DAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAO.h; sourceTree = "<group>"; };
 		D83D6AC91DDF8A8300DC35E7 /* DAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAO.m; sourceTree = "<group>"; };
@@ -149,9 +157,21 @@
 			name = SleepingView;
 			sourceTree = "<group>";
 		};
+		20C24A4E1DE3EA2E001B9565 /* Audios */ = {
+			isa = PBXGroup;
+			children = (
+				20C24A4F1DE3EB01001B9565 /* AfricanFunLong.mp3 */,
+				20C24A551DE3EB17001B9565 /* Techological.mp3 */,
+				20C24A531DE3EB11001B9565 /* MrJasonJazz.mp3 */,
+				20C24A511DE3EB09001B9565 /* HouseParty.mp3 */,
+			);
+			name = Audios;
+			sourceTree = "<group>";
+		};
 		D83C09FE1DC79B6F00B41470 = {
 			isa = PBXGroup;
 			children = (
+				20C24A4C1DE36342001B9565 /* Launch Screen.storyboard */,
 				D83C0A091DC79B6F00B41470 /* YourStop */,
 				D83C0A081DC79B6F00B41470 /* Products */,
 				D85114F31DCA8124002742EC /* Frameworks */,
@@ -182,9 +202,9 @@
 				205E3F791DDBB20F00957764 /* ConfirmDestinationView */,
 				205E3F7F1DDBB26700957764 /* SleepingView */,
 				D83C0A191DC79B6F00B41470 /* Assets.xcassets */,
-				D83C0A1B1DC79B6F00B41470 /* LaunchScreen.storyboard */,
 				D83C0A1E1DC79B6F00B41470 /* Info.plist */,
 				D83C0A161DC79B6F00B41470 /* YourStop.xcdatamodeld */,
+				20C24A4E1DE3EA2E001B9565 /* Audios */,
 				D83C0A0A1DC79B6F00B41470 /* Supporting Files */,
 			);
 			path = YourStop;
@@ -275,12 +295,16 @@
 				205E3F651DDBB10000957764 /* DestinationTableViewController.xib in Resources */,
 				205E3F7E1DDBB26300957764 /* SleepingViewController.xib in Resources */,
 				205E3F781DDBB20900957764 /* ConfirmDestinationViewController.xib in Resources */,
+				20C24A501DE3EB01001B9565 /* AfricanFunLong.mp3 in Resources */,
 				205E3F6F1DDBB15100957764 /* SettingsViewController.xib in Resources */,
 				205E3F6A1DDBB12900957764 /* SetDestinationViewController.xib in Resources */,
+				20C24A541DE3EB11001B9565 /* MrJasonJazz.mp3 in Resources */,
 				205E3F841DDBBA0E00957764 /* DestinationTableViewCell.xib in Resources */,
+				20C24A521DE3EB09001B9565 /* HouseParty.mp3 in Resources */,
+				20C24A561DE3EB17001B9565 /* Techological.mp3 in Resources */,
 				205E3F601DDBB0CC00957764 /* OpeningViewController.xib in Resources */,
-				D83C0A1D1DC79B6F00B41470 /* LaunchScreen.storyboard in Resources */,
 				D83C0A1A1DC79B6F00B41470 /* Assets.xcassets in Resources */,
+				20C24A4D1DE36342001B9565 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,17 +331,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		D83C0A1B1DC79B6F00B41470 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D83C0A1C1DC79B6F00B41470 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D83C0A1F1DC79B6F00B41470 /* Debug */ = {
