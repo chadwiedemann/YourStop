@@ -25,11 +25,9 @@
     self.destinationTableView.delegate = self;
     
     // Test, fake destination object for testing the table view
-    Destination *home = [[Destination alloc]initWithLocation:CLLocationCoordinate2DMake(40.7061403, -74.014399)];
+    Destination *home = [[Destination alloc]initWithLocation:CLLocationCoordinate2DMake(40.707547, -74.011899)];
     home.destinationName = @"Home";
-    // 40.7061403,-74.014399
-//    home.destinationCoordinate = CLLocationCoordinate2DMake(40.7061403, -74.014399);
-    home.miles = 5;
+    home.miles = .1;
     
     Destination *work = [[Destination alloc]init];
     work.destinationName = @"Work";
