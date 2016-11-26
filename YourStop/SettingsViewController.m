@@ -315,8 +315,8 @@
             break;
     }
     self.lblDistanceDisplay.text = [NSString stringWithFormat:@"%@.%@ miles from your destination", wholeNumber, fractionNumber];
-    
-        double distance = [wholeNumber integerValue] + [fractionNumber integerValue];
+        double fractionalDistance = [fractionNumber doubleValue] / 10;
+        double distance = [wholeNumber doubleValue] + fractionalDistance;
         self.editingDestination.miles = distance;
         
     }

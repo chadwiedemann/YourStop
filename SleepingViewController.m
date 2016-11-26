@@ -23,21 +23,22 @@
 {
     
     self.center = [UNUserNotificationCenter currentNotificationCenter];
-    [self.center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
+    [self.center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge)
                           completionHandler:^(BOOL granted, NSError * _Nullable error) {
-                              // Enable or disable features based on authorization.
+                              NSLog(@"%@",error.localizedDescription);
                           }];
-    [self.locationManager requestWhenInUseAuthorization];
     //create region for alarm trigger
     CLLocationCoordinate2D center = self.destination.coordinate;
     
     CLCircularRegion* region = [[CLCircularRegion alloc] initWithCenter:center
                                                                  radius:[self milesSettingInMeters]identifier:@"destinationID"];
     region.notifyOnEntry = YES;
-    region.notifyOnExit = YES;
+    region.notifyOnExit = NO;
+    
     
     self.trigger = [UNLocationNotificationTrigger
                                               triggerWithRegion:region repeats:NO];
+    
     //create alarm trigger content
     self.content = [[UNMutableNotificationContent alloc] init];
     self.content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
@@ -49,7 +50,7 @@
     UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:self.trigger];
     
     [self.center addNotificationRequest:bussAlarm withCompletionHandler:^(NSError * _Nullable error) {
-        NSLog(@"play sound to wake");
+        NSLog(@"add somekind of annimation");
     }];
     [self.locationManager startUpdatingLocation];
     
