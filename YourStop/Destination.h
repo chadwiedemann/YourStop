@@ -21,8 +21,9 @@
 @property (nonatomic, strong) NSString *destinationName;
 @property double miles;
 @property (nonatomic, strong) NSString *ringTone;
-@property BOOL vibration;
 @property NSInteger destinationID;
+@property double latitude;
+@property double longitude;
 
 
 

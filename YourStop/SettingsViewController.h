@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SetDestinationViewController.h"
 #import "Destination.h"
+#import "DAO.h"
+#import "DestinationTableViewController.h"
 
 @interface SettingsViewController : UIViewController
 

@@ -18,7 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    DAO *access = [[DAO alloc]init];
+    self.locationManager = [[CLLocationManager alloc]init];
+    [self.locationManager requestAlwaysAuthorization];
     
     // Set the navigation bar to color
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:87.0/255 green:158.0/255 blue:38.0/255 alpha:1.0];
@@ -27,6 +29,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    
 }
 
 - (void)didReceiveMemoryWarning {
