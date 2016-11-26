@@ -8,11 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "Destination.h"
+#import <CoreData/CoreData.h>
+#import "DestinationMO+CoreDataClass.h"
 
 @interface DAO : NSObject
 
 + (DAO*)sharedInstanceOfDAO;
 @property (nonatomic,strong) NSMutableArray <Destination*> *destinationsArray;
+@property (nonatomic, strong) NSMutableArray <DestinationMO*> *destinationsArrayMO;
 
+-(void)addDestination: (Destination*) destination;
+-(void)deleteDestination: (Destination*) destination;
+-(Destination*)createDestinationFromMO: (DestinationMO*) destinationMO;
+
+//core data setup
+@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
 
 @end

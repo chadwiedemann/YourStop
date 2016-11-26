@@ -28,6 +28,17 @@
     [super viewDidLoad];
     NSLog(@"hello here is data %f",self.editingDestination.coordinate.latitude);
     
+    //
+    self.txfLocationName.delegate = self;
+    
+    //keyboard dissapears when screen is tapped
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+
+    
     // Set up the navigation bar
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveSettings)];
     
@@ -80,6 +91,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.editingDestination.ringTone = @"AfricanFunLong.mp3";
+}
 
 #pragma mark - UIPicker view
 
@@ -300,6 +315,9 @@
             break;
     }
     self.lblDistanceDisplay.text = [NSString stringWithFormat:@"%@.%@ miles from your destination", wholeNumber, fractionNumber];
+    
+        double distance = [wholeNumber integerValue] + [fractionNumber integerValue];
+        self.editingDestination.miles = distance;
         
     }
     
@@ -307,7 +325,7 @@
         
         NSString *audioName = pickerRingToneArray[row];
         self.lblRingToneDisplay.text = [NSString stringWithFormat:@"You picked %@ for the alarm", audioName];
-        
+        self.editingDestination.ringTone = [NSString stringWithFormat:@"%@.mp3",audioName];
         // Play the audio
         NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:audioName ofType:@"mp3"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
@@ -323,16 +341,28 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    NSString *locationName = self.txfLocationName.text;
-    self.editingDestination.destinationName = locationName;
-    
+//    NSString *locationName = self.txfLocationName.text;
+//    self.editingDestination.destinationName = locationName;
+    [self.txfLocationName resignFirstResponder];
     return YES;
 }
 
 
 -(void)saveSettings
 {
+    NSString *locationName = self.txfLocationName.text;
+    self.editingDestination.destinationName = locationName;
+    DAO *dataAccess =  [DAO sharedInstanceOfDAO];
+    [dataAccess addDestination:self.editingDestination];
+//    [dataAccess.destinationsArray addObject:self.editingDestination];
     
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+-(void)dismissKeyboard {
+    NSString *locationName = self.txfLocationName.text;
+    self.editingDestination.destinationName = locationName;
+    [self.txfLocationName resignFirstResponder];
 }
 
 @end

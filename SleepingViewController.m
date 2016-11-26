@@ -16,11 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
-    [center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
-                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
-                              // Enable or disable features based on authorization.
-                          }];
     
 }
 
@@ -28,13 +23,18 @@
 {
     
     self.center = [UNUserNotificationCenter currentNotificationCenter];
+    [self.center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound)
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                              // Enable or disable features based on authorization.
+                          }];
+    [self.locationManager requestWhenInUseAuthorization];
     //create region for alarm trigger
     CLLocationCoordinate2D center = self.destination.coordinate;
     
     CLCircularRegion* region = [[CLCircularRegion alloc] initWithCenter:center
                                                                  radius:[self milesSettingInMeters]identifier:@"destinationID"];
     region.notifyOnEntry = YES;
-    region.notifyOnExit = NO;
+    region.notifyOnExit = YES;
     
     self.trigger = [UNLocationNotificationTrigger
                                               triggerWithRegion:region repeats:NO];
@@ -43,8 +43,8 @@
     self.content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
     self.content.body = [NSString localizedUserNotificationStringForKey:@"Wake up time to get off the buss!"
                                                          arguments:nil];
-    self.content.sound = [UNNotificationSound defaultSound];
-    
+    self.content.sound = [UNNotificationSound soundNamed:self.destination.ringTone];
+    NSLog(@"%@",self.destination.ringTone);
     
     UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:self.trigger];
     
@@ -59,7 +59,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     self.locationManager = [[CLLocationManager alloc]init];
-    [self.locationManager requestAlwaysAuthorization];
     [self.locationManager setDelegate:self];
     [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     return self;
@@ -71,11 +70,11 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)startSleeping
-{
-    [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(compareAlarmDistance) userInfo:nil repeats:YES];
-   
-}
+//-(void)startSleeping
+//{
+//    [NSTimer scheduledTimerWithTimeInterval:2.0f target:self selector:@selector(compareAlarmDistance) userInfo:nil repeats:YES];
+//   
+//}
 
 - (void)soundTheAlarm
 {
@@ -92,25 +91,31 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
-    CLLocation *destinationLocation = [[CLLocation alloc]initWithCoordinate:self.destination.coordinate altitude:0 horizontalAccuracy:1 verticalAccuracy:1 timestamp:[NSDate date]];
-    CLLocationDistance metersToDestination = [self.locationManager.location distanceFromLocation:destinationLocation];
-
-    if(metersToDestination < [self milesSettingInMeters]){
-        [self soundTheAlarm];
-    }
+//    CLLocation *yourDestinationLocation = [[CLLocation alloc]initWithLatitude:self.destination.coordinate.latitude longitude:self.destination.coordinate.longitude];
+//    
+//    double distanceFromLocationMeters = [self.locationManager.location distanceFromLocation:yourDestinationLocation];
+//    
+//    if(distanceFromLocationMeters<[self milesSettingInMeters]){
+//        
+//        
+//        
+//        UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger
+//                                                      triggerWithTimeInterval:(1) repeats: NO];
+//       
+//        UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:trigger];
+//        
+//        [self.center addNotificationRequest:bussAlarm withCompletionHandler:^(NSError * _Nullable error) {
+//            NSLog(@"play sound to wake");
+//        }];
+//    
+//        [self.locationManager stopUpdatingLocation];
+//        
+//    }
     
     
-        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
-        localNotification.alertBody = @"Wake up you sleepy head";
-        localNotification.alertAction = @"Location data received";
-        localNotification.hasAction = YES;
-        [[UIApplication sharedApplication] presentLocalNotificationNow:localNotification];
-        
     
     
     
-    NSLog(@"distance checked for the %d time",self.checked);
-    self.checked++;
 }
 
 @end

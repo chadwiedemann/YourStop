@@ -28,20 +28,19 @@
     self.destinationTableView.delegate = self;
     
     // Test, fake destination object for testing the table view
-    Destination *home = [[Destination alloc]initWithLocation:CLLocationCoordinate2DMake(40.7061403, -74.014399)];
-    home.destinationName = @"Home";
-    // 40.7061403,-74.014399
-//    home.destinationCoordinate = CLLocationCoordinate2DMake(40.7061403, -74.014399);
-    home.miles = 5;
-    
-    Destination *work = [[Destination alloc]init];
-    work.destinationName = @"Work";
-    work.miles = 1;
+//    Destination *home = [[Destination alloc]initWithLocation:CLLocationCoordinate2DMake(40.89405917, -74.04534638)];
+//    home.destinationName = @"Home";
+//    home.miles = 1;
+//    home.ringTone = @"HouseParty.mp3";
+//    Destination *work = [[Destination alloc]init];
+//    work.destinationName = @"Work";
+//    work.miles = 1;
     
     self.destinationsArray = [[NSMutableArray alloc]init];
-    
-    [self.destinationsArray addObject:home];
-    [self.destinationsArray addObject:work];
+    DAO *dataAccess = [DAO sharedInstanceOfDAO];
+    [self.destinationsArray addObjectsFromArray:dataAccess.destinationsArray];
+//    [self.destinationsArray addObject:home];
+//    [self.destinationsArray addObject:work];
     
     // Set up the navigation bar
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewLocation)];
@@ -67,16 +66,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - Table view data source
 
@@ -142,8 +131,16 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the location on the row
-        [self.destinationsArray removeObjectAtIndex:indexPath.row];
         
+        DAO *access = [DAO sharedInstanceOfDAO];
+//        [access deleteDestination: [self.destinationsArray objectAtIndex:indexPath.row]];
+        
+        [self.destinationsArray removeObjectAtIndex:indexPath.row];
+        [access.destinationsArray removeObjectAtIndex:indexPath.row];
+        [access.managedObjectContext deleteObject:[access.destinationsArrayMO objectAtIndex:indexPath.row]];
+        [access.destinationsArrayMO removeObjectAtIndex:indexPath.row];
+
+        [access saveContext];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     
