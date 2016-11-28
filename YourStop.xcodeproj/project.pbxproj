@@ -23,10 +23,10 @@
 		205E3F831DDBBA0E00957764 /* DestinationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 205E3F811DDBBA0E00957764 /* DestinationTableViewCell.m */; };
 		205E3F841DDBBA0E00957764 /* DestinationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205E3F821DDBBA0E00957764 /* DestinationTableViewCell.xib */; };
 		20C24A4D1DE36342001B9565 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A4C1DE36342001B9565 /* Launch Screen.storyboard */; };
-		20C24A501DE3EB01001B9565 /* AfricanFunLong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A4F1DE3EB01001B9565 /* AfricanFunLong.mp3 */; };
 		20C24A521DE3EB09001B9565 /* HouseParty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A511DE3EB09001B9565 /* HouseParty.mp3 */; };
-		20C24A541DE3EB11001B9565 /* MrJasonJazz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A531DE3EB11001B9565 /* MrJasonJazz.mp3 */; };
-		20C24A561DE3EB17001B9565 /* Techological.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A551DE3EB17001B9565 /* Techological.mp3 */; };
+		20C24A911DECC38D001B9565 /* AfricanFunLong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A901DECC38D001B9565 /* AfricanFunLong.mp3 */; };
+		20C24A931DECC395001B9565 /* MrJasonJazz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A921DECC395001B9565 /* MrJasonJazz.mp3 */; };
+		20C24A951DECC39C001B9565 /* Techological.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A941DECC39C001B9565 /* Techological.mp3 */; };
 		D83C0A0C1DC79B6F00B41470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0B1DC79B6F00B41470 /* main.m */; };
 		D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0E1DC79B6F00B41470 /* AppDelegate.m */; };
 		D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A161DC79B6F00B41470 /* YourStop.xcdatamodeld */; };
@@ -64,10 +64,10 @@
 		205E3F811DDBBA0E00957764 /* DestinationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationTableViewCell.m; sourceTree = "<group>"; };
 		205E3F821DDBBA0E00957764 /* DestinationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationTableViewCell.xib; sourceTree = "<group>"; };
 		20C24A4C1DE36342001B9565 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		20C24A4F1DE3EB01001B9565 /* AfricanFunLong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AfricanFunLong.mp3; sourceTree = "<group>"; };
 		20C24A511DE3EB09001B9565 /* HouseParty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HouseParty.mp3; sourceTree = "<group>"; };
-		20C24A531DE3EB11001B9565 /* MrJasonJazz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MrJasonJazz.mp3; sourceTree = "<group>"; };
-		20C24A551DE3EB17001B9565 /* Techological.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Techological.mp3; sourceTree = "<group>"; };
+		20C24A901DECC38D001B9565 /* AfricanFunLong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AfricanFunLong.mp3; sourceTree = "<group>"; };
+		20C24A921DECC395001B9565 /* MrJasonJazz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MrJasonJazz.mp3; sourceTree = "<group>"; };
+		20C24A941DECC39C001B9565 /* Techological.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Techological.mp3; sourceTree = "<group>"; };
 		D83C0A071DC79B6F00B41470 /* YourStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83C0A0B1DC79B6F00B41470 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D83C0A0D1DC79B6F00B41470 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -166,9 +166,9 @@
 		20C24A4E1DE3EA2E001B9565 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
-				20C24A4F1DE3EB01001B9565 /* AfricanFunLong.mp3 */,
-				20C24A551DE3EB17001B9565 /* Techological.mp3 */,
-				20C24A531DE3EB11001B9565 /* MrJasonJazz.mp3 */,
+				20C24A901DECC38D001B9565 /* AfricanFunLong.mp3 */,
+				20C24A921DECC395001B9565 /* MrJasonJazz.mp3 */,
+				20C24A941DECC39C001B9565 /* Techological.mp3 */,
 				20C24A511DE3EB09001B9565 /* HouseParty.mp3 */,
 			);
 			name = Audios;
@@ -305,13 +305,13 @@
 				205E3F651DDBB10000957764 /* DestinationTableViewController.xib in Resources */,
 				205E3F7E1DDBB26300957764 /* SleepingViewController.xib in Resources */,
 				205E3F781DDBB20900957764 /* ConfirmDestinationViewController.xib in Resources */,
-				20C24A501DE3EB01001B9565 /* AfricanFunLong.mp3 in Resources */,
 				205E3F6F1DDBB15100957764 /* SettingsViewController.xib in Resources */,
 				205E3F6A1DDBB12900957764 /* SetDestinationViewController.xib in Resources */,
-				20C24A541DE3EB11001B9565 /* MrJasonJazz.mp3 in Resources */,
 				205E3F841DDBBA0E00957764 /* DestinationTableViewCell.xib in Resources */,
+				20C24A931DECC395001B9565 /* MrJasonJazz.mp3 in Resources */,
 				20C24A521DE3EB09001B9565 /* HouseParty.mp3 in Resources */,
-				20C24A561DE3EB17001B9565 /* Techological.mp3 in Resources */,
+				20C24A911DECC38D001B9565 /* AfricanFunLong.mp3 in Resources */,
+				20C24A951DECC39C001B9565 /* Techological.mp3 in Resources */,
 				205E3F601DDBB0CC00957764 /* OpeningViewController.xib in Resources */,
 				D83C0A1A1DC79B6F00B41470 /* Assets.xcassets in Resources */,
 				20C24A4D1DE36342001B9565 /* Launch Screen.storyboard in Resources */,
