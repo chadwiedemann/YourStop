@@ -19,6 +19,10 @@
     
 }
 
+
+
+/*
+
 -(void)viewDidDisappear:(BOOL)animated
 {
     [self.center removeAllPendingNotificationRequests];
@@ -81,6 +85,8 @@
 {
     return self.destination.miles*1609.34;
 }
+ 
+ */
 
 
 
