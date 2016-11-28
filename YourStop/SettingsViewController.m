@@ -331,7 +331,7 @@
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         
         self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];
-        
+        [self.audioPlayer setVolume:20];
         [self.audioPlayer play];
         
     }
