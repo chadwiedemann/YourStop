@@ -92,5 +92,10 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     }
 }
 
+-(void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
+{
+    MKAnnotationView *ulv = [mapView viewForAnnotation:mapView.userLocation];
+    ulv.hidden = YES;
+}
 
 @end

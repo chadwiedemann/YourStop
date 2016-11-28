@@ -20,7 +20,6 @@
     
     // Set up the locationManager
     self.locationManager = [[CLLocationManager alloc]init];
-    [self.locationManager requestWhenInUseAuthorization];
     [self.locationManager setDelegate:self];
     [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     

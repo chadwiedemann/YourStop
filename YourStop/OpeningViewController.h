@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DAO.h"
 
-@interface OpeningViewController : UIViewController
+@interface OpeningViewController : UIViewController <CLLocationManagerDelegate>
 
 //- (IBAction)startAppBtnPressed:(id)sender;
 
 - (IBAction)btnSavedLocation:(id)sender;
 - (IBAction)btnNewLocation:(id)sender;
-
+@property (nonatomic, strong) CLLocationManager* locationManager;
 @end
