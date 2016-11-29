@@ -32,7 +32,7 @@
     // Set up the local notificatin
     self.center = [UNUserNotificationCenter currentNotificationCenter];
     [self.center removeAllPendingNotificationRequests];
-    UNAuthorizationOptions option = UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge;
+    UNAuthorizationOptions option = UNAuthorizationOptionAlert + UNAuthorizationOptionSound;
     [self.center requestAuthorizationWithOptions:option completionHandler:^(BOOL granted, NSError * _Nullable error) {
         if (!granted) {
             NSLog(@"something went wrong with userNotification");
