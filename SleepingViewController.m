@@ -48,30 +48,11 @@
         [[LocationManager sharedInstance] stopUpdatingLocation];
         NSLog(@"play music here");
         
-//        // Play music here
-//        NSString *audioName = self.destination.ringTone;
-//        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:audioName ofType:@"mp3"];
-//        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-//        
-//        self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];
-//        [self.audioPlayer setVolume:20];
-//        [self.audioPlayer play];
-        
-//        // Set up the local notificatin
-//        self.center = [UNUserNotificationCenter currentNotificationCenter];
-//        [self.center removeAllPendingNotificationRequests];
-//        UNAuthorizationOptions option = UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge;
-//        [self.center requestAuthorizationWithOptions:option completionHandler:^(BOOL granted, NSError * _Nullable error) {
-//            if (!granted) {
-//                NSLog(@"something went wrong with userNotification");
-//            }
-//        }];
-        
         //create alarm trigger content
         self.content = [[UNMutableNotificationContent alloc] init];
         self.content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
         self.content.body = [NSString localizedUserNotificationStringForKey:@"Wake up time to get off the buss!" arguments:nil];
-        self.content.badge = [NSNumber numberWithInt:1];
+//        self.content.badge = [NSNumber numberWithInt:1];
         NSString *soundName = [NSString stringWithFormat:@"%@.wav", self.destination.ringTone];
         
         self.content.sound = [UNNotificationSound soundNamed:soundName];
