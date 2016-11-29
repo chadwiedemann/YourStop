@@ -17,12 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if(!self.destinationPin){
-        self.destinationPin = [[Destination alloc]initWithLocation:self.locationManager.location.coordinate];
-        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.userLocation, 800, 800);
-        [self.setDestinationMapView setRegion:[self.setDestinationMapView regionThatFits:region] animated:YES];
-        [self.setDestinationMapView addAnnotation:self.destinationPin];
-    }
+//    if(!self.destinationPin){
+//        self.destinationPin = [[Destination alloc]initWithLocation:self.locationManager.location.coordinate];
+//        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.userLocation, 800, 800);
+//        [self.setDestinationMapView setRegion:[self.setDestinationMapView regionThatFits:region] animated:YES];
+//        [self.setDestinationMapView addAnnotation:self.destinationPin];
+//    }
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(moveToSettingsVC)];
     self.navigationItem.rightBarButtonItem = addButton;
