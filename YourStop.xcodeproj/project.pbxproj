@@ -27,6 +27,7 @@
 		20C24A911DECC38D001B9565 /* AfricanFunLong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A901DECC38D001B9565 /* AfricanFunLong.mp3 */; };
 		20C24A931DECC395001B9565 /* MrJasonJazz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A921DECC395001B9565 /* MrJasonJazz.mp3 */; };
 		20C24A951DECC39C001B9565 /* Techological.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A941DECC39C001B9565 /* Techological.mp3 */; };
+		20C24A981DED0C2A001B9565 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C24A971DED0C2A001B9565 /* LocationManager.m */; };
 		D83C0A0C1DC79B6F00B41470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0B1DC79B6F00B41470 /* main.m */; };
 		D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0E1DC79B6F00B41470 /* AppDelegate.m */; };
 		D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A161DC79B6F00B41470 /* YourStop.xcdatamodeld */; };
@@ -68,6 +69,8 @@
 		20C24A901DECC38D001B9565 /* AfricanFunLong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AfricanFunLong.mp3; sourceTree = "<group>"; };
 		20C24A921DECC395001B9565 /* MrJasonJazz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MrJasonJazz.mp3; sourceTree = "<group>"; };
 		20C24A941DECC39C001B9565 /* Techological.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Techological.mp3; sourceTree = "<group>"; };
+		20C24A961DED0C2A001B9565 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		20C24A971DED0C2A001B9565 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
 		D83C0A071DC79B6F00B41470 /* YourStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83C0A0B1DC79B6F00B41470 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D83C0A0D1DC79B6F00B41470 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 				205E3F7A1DDBB26300957764 /* SleepingViewController.h */,
 				205E3F7B1DDBB26300957764 /* SleepingViewController.m */,
 				205E3F7C1DDBB26300957764 /* SleepingViewController.xib */,
+				20C24A961DED0C2A001B9565 /* LocationManager.h */,
+				20C24A971DED0C2A001B9565 /* LocationManager.m */,
 			);
 			name = SleepingView;
 			sourceTree = "<group>";
@@ -331,6 +336,7 @@
 				205E3F641DDBB10000957764 /* DestinationTableViewController.m in Sources */,
 				205E3F691DDBB12900957764 /* SetDestinationViewController.m in Sources */,
 				D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */,
+				20C24A981DED0C2A001B9565 /* LocationManager.m in Sources */,
 				205E3F6E1DDBB15100957764 /* SettingsViewController.m in Sources */,
 				D88605B41DE8E4D300288B93 /* DestinationMO+CoreDataClass.m in Sources */,
 				D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */,

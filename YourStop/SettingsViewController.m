@@ -325,7 +325,8 @@
         
         NSString *audioName = pickerRingToneArray[row];
         self.lblRingToneDisplay.text = [NSString stringWithFormat:@"You picked %@ for the alarm", audioName];
-        self.editingDestination.ringTone = [NSString stringWithFormat:@"%@.mp3",audioName];
+        self.editingDestination.ringTone = audioName;
+       // self.editingDestination.ringTone = [NSString stringWithFormat:@"%@.mp3",audioName];
         // Play the audio
         NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:audioName ofType:@"mp3"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
