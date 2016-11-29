@@ -442,7 +442,7 @@
 		D83C0A221DC79B6F00B41470 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				DEVELOPMENT_TEAM = M5F29Q3684;
 				INFOPLIST_FILE = YourStop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -454,7 +454,7 @@
 		D83C0A231DC79B6F00B41470 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				DEVELOPMENT_TEAM = M5F29Q3684;
 				INFOPLIST_FILE = YourStop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
