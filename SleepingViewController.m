@@ -25,11 +25,6 @@
     [LocationManager sharedInstance].delegate = self;
     [[LocationManager sharedInstance] startUpdatingLocation];
     
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
     // Set up the local notificatin
     self.center = [UNUserNotificationCenter currentNotificationCenter];
     [self.center removeAllPendingNotificationRequests];
@@ -42,6 +37,7 @@
 
     
 }
+
 
 -(void) didUpdateLocation:(CLLocation *)location
 {
@@ -76,7 +72,8 @@
         self.content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
         self.content.body = [NSString localizedUserNotificationStringForKey:@"Wake up time to get off the buss!" arguments:nil];
         self.content.badge = [NSNumber numberWithInt:1];
-        NSString *soundName = [NSString stringWithFormat:@"%@.mp3", self.destination.ringTone];
+        NSString *soundName = [NSString stringWithFormat:@"%@.wav", self.destination.ringTone];
+        
         self.content.sound = [UNNotificationSound soundNamed:soundName];
        
         self.trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO];
