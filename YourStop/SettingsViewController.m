@@ -62,9 +62,9 @@
     // Set up ring tone picker view
     pickerRingToneArray = [[NSMutableArray alloc]init];
     [pickerRingToneArray addObject:@"AfricanFunLong"];
-    [pickerRingToneArray addObject:@"Techological"];
     [pickerRingToneArray addObject:@"MrJasonJazz"];
     [pickerRingToneArray addObject:@"HouseParty"];
+    [pickerRingToneArray addObject:@"TechologicalWAV"];
     
     
     // Set the border for the picker view
@@ -93,7 +93,8 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    self.editingDestination.ringTone = @"AfricanFunLong.mp3";
+    self.editingDestination.ringTone = @"AfricanFunLong.wav";
+
 }
 
 #pragma mark - UIPicker view
@@ -325,9 +326,10 @@
         
         NSString *audioName = pickerRingToneArray[row];
         self.lblRingToneDisplay.text = [NSString stringWithFormat:@"You picked %@ for the alarm", audioName];
-        self.editingDestination.ringTone = [NSString stringWithFormat:@"%@.mp3",audioName];
+        self.editingDestination.ringTone = audioName;
+       // self.editingDestination.ringTone = [NSString stringWithFormat:@"%@.mp3",audioName];
         // Play the audio
-        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:audioName ofType:@"mp3"];
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:audioName ofType:@".wav"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         
         self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];

@@ -15,6 +15,6 @@
 @property (nonatomic, strong) Destination *destination;
 @property double distanceInMeters;
 @property (nonatomic, strong) UNMutableNotificationContent *content;
-@property (nonatomic, strong) UNLocationNotificationTrigger *trigger;
+@property (nonatomic, strong) UNTimeIntervalNotificationTrigger *trigger;
 @property (nonatomic, strong) UNUserNotificationCenter *center;
 @end

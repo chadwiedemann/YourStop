@@ -26,6 +26,18 @@
     self.userLocation = self.locationManager.location.coordinate;
 
     self.setDestinationMapView.delegate = self;
+    
+    // Add Alert View to guide the user to use the pin drop
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Please hold the pin, then drag and drop it to your desnination" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 -(void)moveToSettingsVC
