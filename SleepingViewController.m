@@ -7,8 +7,13 @@
 //
 
 #import "SleepingViewController.h"
+#import "LocationManager.h"
+#import <AVFoundation/AVFoundation.h>
+#import <UserNotifications/UserNotifications.h>
 
-@interface SleepingViewController ()
+@interface SleepingViewController () <LocationManagerDelegate>
+
+@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
 
 @end
 
@@ -16,31 +21,59 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem: UIBarButtonSystemItemDone target:self action:@selector(popVC)];
+
+
+    [LocationManager sharedInstance].delegate = self;
+    [[LocationManager sharedInstance] startUpdatingLocation];
     
-    self.navigationItem.leftBarButtonItem = backButton;
+    // Set up the local notificatin
+    self.center = [UNUserNotificationCenter currentNotificationCenter];
+    [self.center removeAllPendingNotificationRequests];
+    UNAuthorizationOptions option = UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge;
+    [self.center requestAuthorizationWithOptions:option completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (!granted) {
+            NSLog(@"something went wrong with userNotification");
+        }
+    }];
+
+
 }
 
-- (void)popVC
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"You are cancling the alarm set to wake you %.1f miles from %@", self.destination.miles, self.destination.destinationName]
-                                                    message:@"...Do you want to proceed?"
-                                                   delegate:self
-                                          cancelButtonTitle:@"No"
-                                          otherButtonTitles:@"Yes", nil];
-    [alert show];
-}
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+
+-(void) didUpdateLocation:(CLLocation *)location
 {
-    switch(buttonIndex) {
-        case 0: //"No" pressed
-            //do something?
-            break;
-        case 1: //"Yes" pressed
-            //here you pop the viewController
-            [self.navigationController popViewControllerAnimated:YES];
-            break;
+    double distance = [location distanceFromLocation:[[CLLocation alloc] initWithLatitude:self.destination.coordinate.latitude
+                                                                                longitude:self.destination.coordinate.longitude]];
+    
+    if (distance < [self milesSettingInMeters]) {
+        [[LocationManager sharedInstance] stopUpdatingLocation];
+        NSLog(@"play music here");
+        
+        //create alarm trigger content
+        self.content = [[UNMutableNotificationContent alloc] init];
+        self.content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
+        self.content.body = [NSString localizedUserNotificationStringForKey:@"Wake up time to get off the buss!" arguments:nil];
+//        self.content.badge = [NSNumber numberWithInt:1];
+        NSString *soundName = [NSString stringWithFormat:@"%@.wav", self.destination.ringTone];
+        
+        self.content.sound = [UNNotificationSound soundNamed:soundName];
+       
+        self.trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO];
+        
+        //creating the request by adding content and trigger information
+        UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:self.trigger];
+        [self.center addNotificationRequest:bussAlarm withCompletionHandler:^(NSError * _Nullable error) {
+            if(error){
+                NSLog(@"%@",error.localizedDescription);
+            }
+            NSLog(@"add somekind of annimation");
+        }];
+        [self.center getPendingNotificationRequestsWithCompletionHandler:^(NSArray<UNNotificationRequest *> * _Nonnull requests) {
+            NSLog(@"WE HAVE A PENDING REQUEST");
+            NSLog(@"%@",[requests objectAtIndex:0]);
+        }];
+
     }
 }
 
@@ -52,31 +85,11 @@
     [application cancelAllLocalNotifications];
 }
 
+/*
+
 -(void)viewWillAppear:(BOOL)animated
 {
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You have set an alarm." message: [NSString stringWithFormat:@"The alarm will be triggered %.1f miles from %@.  We highly recomend the use of head phones or earbuds to ensure you wake at the correct time and do not disturb fellow commuters!",self.destination.miles,self.destination.destinationName] preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-    
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
 
-    
-    [self.locationManager startUpdatingLocation];
-    UILocalNotification *locNotification = [[UILocalNotification alloc]init];
-    locNotification.alertBody = @"Wake up your commute is coming to an end";
-    locNotification.region = [[CLCircularRegion alloc]initWithCenter:self.destination.coordinate radius:[self milesSettingInMeters] identifier:@"desty"];
-    locNotification.soundName = [NSString stringWithFormat:@"%@",self.destination.ringTone];
-    locNotification.regionTriggersOnce = NO;
-    UIApplication *application = [UIApplication sharedApplication];
-    [application cancelAllLocalNotifications];
-    [application scheduleLocalNotification:locNotification];
-    
-    //alert letting the user know that a geofence has been errected and an alarm will sound when the phone crosses the boarder
-    
-    
-    
-    //    [self.locationManager startUpdatingLocation];
     self.center = [UNUserNotificationCenter currentNotificationCenter];
     [self.center removeAllPendingNotificationRequests];
     [self.center requestAuthorizationWithOptions:(UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge)
@@ -132,11 +145,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+*/
 
 -(double)milesSettingInMeters
 {
     return self.destination.miles*1609.34;
 }
+ 
 
 - (void)soundTheAlarm
 {

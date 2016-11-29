@@ -39,6 +39,24 @@
         UIBarButtonItem *editButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editLocation)];
     
         self.navigationItem.rightBarButtonItem = editButton;
+    
+    // set up circle
+    double meters = self.selectedLocation.miles*1609.34;
+    MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinates radius:meters];
+    [self.maps setDelegate:self];
+    
+    [self.maps addOverlay:circle];
+    
+    
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {
+    
+    MKCircleRenderer *circleRenderer = [[MKCircleRenderer alloc]initWithCircle:overlay];
+    circleRenderer.strokeColor = [UIColor redColor];
+    circleRenderer.lineWidth = 1.0;
+    
+    return circleRenderer;
 }
 
 
@@ -56,5 +74,13 @@
     sleepingVC.destination = self.selectedLocation;
     [self.navigationController pushViewController:sleepingVC animated:YES];
 }
+
+
+-(void)editLocation
+{
+    
+}
+
+
 
 @end
