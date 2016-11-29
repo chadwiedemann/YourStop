@@ -18,14 +18,16 @@
     [super viewDidLoad];
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(moveToSettingsVC)];
-    
     self.navigationItem.rightBarButtonItem = addButton;
-
-    
     self.setDestinationMapView.showsUserLocation = YES;
     self.userLocation = self.locationManager.location.coordinate;
-
     self.setDestinationMapView.delegate = self;
+    if(!self.destinationPin){
+        self.destinationPin = [[Destination alloc]initWithLocation:self.locationManager.location.coordinate];
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.userLocation, 800, 800);
+        [self.setDestinationMapView setRegion:[self.setDestinationMapView regionThatFits:region] animated:YES];
+        [self.setDestinationMapView addAnnotation:self.destinationPin];
+    }
 }
 
 -(void)moveToSettingsVC
