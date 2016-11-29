@@ -22,6 +22,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(popVC)];
+    
+    self.navigationItem.leftBarButtonItem = backButton;
+
     [LocationManager sharedInstance].delegate = self;
     [[LocationManager sharedInstance] startUpdatingLocation];
     
@@ -36,8 +40,19 @@
     }];
 
     
+
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You have set an alarm." message: [NSString stringWithFormat:@"The alarm will be triggered %.1f miles from %@.  We highly recommend the use of head phones or earbuds to ensure you wake at the correct time and do not disturb fellow commuters!",self.destination.miles,self.destination.destinationName] preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+
+}
 
 -(void) didUpdateLocation:(CLLocation *)location
 {
@@ -71,14 +86,16 @@
             NSLog(@"WE HAVE A PENDING REQUEST");
             NSLog(@"%@",[requests objectAtIndex:0]);
         }];
+
     }
 }
-
 
 
 -(void)viewDidDisappear:(BOOL)animated
 {
     [self.center removeAllPendingNotificationRequests];
+    UIApplication *application = [UIApplication sharedApplication];
+    [application cancelAllLocalNotifications];
 }
 
 /*
@@ -106,12 +123,12 @@
     self.content = [[UNMutableNotificationContent alloc] init];
     self.content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
     self.content.body = [NSString localizedUserNotificationStringForKey:@"Wake up time to get off the buss!" arguments:nil];
-    self.content.badge = [NSNumber numberWithInt:1];
     self.content.sound = [UNNotificationSound soundNamed:self.destination.ringTone];
     NSLog(@"%@",self.destination.ringTone);
     
     //creating the request by adding content and trigger information
     UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:self.trigger];
+    
     [self.center addNotificationRequest:bussAlarm withCompletionHandler:^(NSError * _Nullable error) {
         if(error){
         NSLog(@"%@",error.localizedDescription);
@@ -122,11 +139,16 @@
         NSLog(@"WE HAVE A PENDING REQUEST");
         NSLog(@"%@",[requests objectAtIndex:0]);
     }];
+    
 }
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self.locationManager = [[CLLocationManager alloc]init];
+    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager setDelegate:self];
+    [self.locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     return self;
 }
 
@@ -144,6 +166,71 @@
 }
  
 
+- (void)soundTheAlarm
+{
+    
+    NSLog(@"Time to wakkkkkeeee upppp and create the method to ring the phone");
+}
 
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+{
+    CLLocation *destinationLocation = [[CLLocation alloc]initWithCoordinate:self.destination.coordinate altitude:0 horizontalAccuracy:1 verticalAccuracy:1 timestamp:[NSDate date]];
+    CLLocationDistance metersToDestination = [self.locationManager.location distanceFromLocation:destinationLocation];
+    
+    if(metersToDestination < [self milesSettingInMeters]){
+        
+        self.timeTrigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:(10) repeats:NO];
+        
+        //create content
+        self.content = [[UNMutableNotificationContent alloc] init];
+        self.content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
+        self.content.body = [NSString localizedUserNotificationStringForKey:@"Wake up time to get off the buss!" arguments:nil];
+        self.content.sound = [UNNotificationSound soundNamed:self.destination.ringTone];
+        NSLog(@"%@",self.destination.ringTone);
+        
+        //creating the request by adding content and trigger information
+        UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:self.timeTrigger];
+        
+        [self.center addNotificationRequest:bussAlarm withCompletionHandler:^(NSError * _Nullable error) {
+            if(error){
+                NSLog(@"%@",error.localizedDescription);
+            }
+            NSLog(@"add somekind of annimation");
+        }];
+
+    }
+
+
+
+
+
+
+    NSLog(@"distance checked for the %d time",self.checked);
+    self.checked++;
+    self.testingLabel.text = [NSString stringWithFormat:@"%d",self.checked] ;
+}
+
+- (void)popVC
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"You are cancling the alarm set to wake you %.1f miles from %@", self.destination.miles, self.destination.destinationName]
+                                                    message:@"...Do you want to proceed?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"No"
+                                          otherButtonTitles:@"Yes", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch(buttonIndex) {
+        case 0: //"No" pressed
+            //do something?
+            break;
+        case 1: //"Yes" pressed
+            //here you pop the viewController
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+    }
+}
 
 @end

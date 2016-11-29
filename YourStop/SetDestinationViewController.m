@@ -18,13 +18,9 @@
     [super viewDidLoad];
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(moveToSettingsVC)];
-    
     self.navigationItem.rightBarButtonItem = addButton;
-
-    
     self.setDestinationMapView.showsUserLocation = YES;
     self.userLocation = self.locationManager.location.coordinate;
-
     self.setDestinationMapView.delegate = self;
     
     // Add Alert View to guide the user to use the pin drop
