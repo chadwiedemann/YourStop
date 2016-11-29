@@ -164,4 +164,11 @@
 
 
 
+- (IBAction)btnAddNewLocation:(id)sender {
+    // Create the next view controller
+    SetDestinationViewController *setDestinationVC = [[SetDestinationViewController alloc]initWithNibName:@"SetDestinationViewController" bundle:nil];
+    
+    [self.navigationController pushViewController:setDestinationVC animated:YES];
+    
+}
 @end
