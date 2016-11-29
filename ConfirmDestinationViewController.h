@@ -12,7 +12,7 @@
 
 #import "Destination.h"
 
-@interface ConfirmDestinationViewController : UIViewController <CLLocationManagerDelegate>
+@interface ConfirmDestinationViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property (nonatomic, strong) Destination *selectedLocation;
 @property (nonatomic, strong) CLLocationManager *locationManager;
