@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -22,25 +21,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKT-HN-F4L">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="425.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </mapView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sbn-nZ-xV0">
-                    <rect key="frame" x="0.0" y="433.5" width="320" height="30.5"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Sbn-nZ-xV0" secondAttribute="bottom" constant="16" id="Djy-NP-ZSF"/>
-                <constraint firstItem="Sbn-nZ-xV0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RG4-oL-zcb"/>
-                <constraint firstAttribute="trailing" secondItem="Sbn-nZ-xV0" secondAttribute="trailing" id="Sme-UR-sjT"/>
-                <constraint firstItem="dKT-HN-F4L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ya9-Jq-ItN"/>
-                <constraint firstItem="Sbn-nZ-xV0" firstAttribute="top" secondItem="dKT-HN-F4L" secondAttribute="bottom" constant="8" id="eRK-p1-moq"/>
-                <constraint firstItem="Sbn-nZ-xV0" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.1" constant="-17.700000000000003" id="q7H-mk-Dhi"/>
-                <constraint firstItem="dKT-HN-F4L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="w0P-Qu-acd"/>
-                <constraint firstAttribute="trailing" secondItem="dKT-HN-F4L" secondAttribute="trailing" id="xIJ-SP-Tam"/>
+                <constraint firstItem="dKT-HN-F4L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2MM-Qq-Kes"/>
+                <constraint firstAttribute="trailing" secondItem="dKT-HN-F4L" secondAttribute="trailing" id="PaB-N4-Ts8"/>
+                <constraint firstAttribute="bottom" secondItem="dKT-HN-F4L" secondAttribute="bottom" id="Pf7-zN-pRV"/>
+                <constraint firstItem="dKT-HN-F4L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oUQ-g7-pre"/>
             </constraints>
-            <point key="canvasLocation" x="33.5" y="54.5"/>
+            <point key="canvasLocation" x="33" y="54"/>
         </view>
     </objects>
 </document>
