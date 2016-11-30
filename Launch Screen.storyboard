@@ -27,30 +27,30 @@
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Stop" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
-                                <rect key="frame" x="69" y="309.5" width="237" height="49"/>
-                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="49"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yourStopLogo" translatesAutoresizingMaskIntoConstraints="NO" id="yhG-d4-PXB">
-                                <rect key="frame" x="137.5" y="189.5" width="100" height="100"/>
+                                <rect key="frame" x="112" y="258" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="UxW-Dq-KGF"/>
-                                    <constraint firstAttribute="height" constant="100" id="eT8-Bh-ejB"/>
+                                    <constraint firstAttribute="width" constant="150" id="aSg-vH-z92"/>
+                                    <constraint firstAttribute="height" constant="150" id="eNe-iL-lhv"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Stop" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="GJd-Yh-RWb">
+                                <rect key="frame" x="69" y="159" width="237" height="49"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="49"/>
+                                <color key="textColor" red="1" green="0.50196078431372548" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1sz-MZ-Jqb"/>
+                            <constraint firstItem="yhG-d4-PXB" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="2gl-fR-xD6"/>
                             <constraint firstAttribute="centerX" secondItem="obG-Y5-kRd" secondAttribute="centerX" id="5cz-MP-9tL"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="top" secondItem="yhG-d4-PXB" secondAttribute="bottom" constant="20" id="5if-z5-E5d"/>
-                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LZU-Uc-iTp"/>
+                            <constraint firstItem="GJd-Yh-RWb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="NL8-BN-v37"/>
                             <constraint firstItem="obG-Y5-kRd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" symbolic="YES" id="SfN-ll-jLj"/>
+                            <constraint firstItem="yhG-d4-PXB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="UXJ-xr-4xZ"/>
+                            <constraint firstItem="yhG-d4-PXB" firstAttribute="top" secondItem="GJd-Yh-RWb" secondAttribute="bottom" constant="50" id="X21-ne-Del"/>
                             <constraint firstAttribute="bottom" secondItem="obG-Y5-kRd" secondAttribute="bottom" constant="20" id="Y44-ml-fuU"/>
-                            <constraint firstItem="yhG-d4-PXB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dS9-4m-V2U"/>
                         </constraints>
                     </view>
                 </viewController>

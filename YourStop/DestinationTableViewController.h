@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *destinationTableView;
 @property (weak, nonatomic) IBOutlet UIView *emptyView;
 
+- (IBAction)btnAddNewLocation:(id)sender;
 
 @end

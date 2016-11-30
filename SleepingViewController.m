@@ -113,6 +113,7 @@
     [self.center removeAllPendingNotificationRequests];
     UIApplication *application = [UIApplication sharedApplication];
     [application cancelAllLocalNotifications];
+        
 }
 
 /*
