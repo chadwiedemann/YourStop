@@ -74,14 +74,6 @@
     self.pickerViewRingTone.layer.borderColor = [UIColor darkGrayColor].CGColor;
     self.pickerViewRingTone.layer.borderWidth = 2;
     
-    // Set up the switch display
-    if (self.switchVibration.isOn) {
-        self.lblVibrationStatus.text = @"Vibration is ON";
-    } else {
-        self.lblVibrationStatus.text = @"Vibration is OFF";
-    }
-    
-    
     
 
 }
@@ -94,6 +86,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     self.editingDestination.ringTone = @"AfricanFunLong.wav";
+    self.lblRingToneDisplay.text = @"AfricanFunLong.wav";
 
 }
 
@@ -320,6 +313,9 @@
         double distance = [wholeNumber doubleValue] + fractionalDistance;
         self.editingDestination.miles = distance;
         
+        // the bottom layer for ring tone should disappear
+        self.bottomViewLayer.hidden = YES;
+        
     }
     
     else if (pickerView == _pickerViewRingTone) {
@@ -367,4 +363,18 @@
     [self.txfLocationName resignFirstResponder];
 }
 
+- (IBAction)btnNameDone:(id)sender {
+    NSString *locationName = self.txfLocationName.text;
+    self.editingDestination.destinationName = locationName;
+    [self.txfLocationName resignFirstResponder];
+    
+    // Hide the view layer at the middle view (ring tone view layer)
+    self.middleViewLayer.hidden = YES;
+    
+}
+
+- (IBAction)btnSavePressed:(id)sender {
+    
+    [self saveSettings];
+}
 @end

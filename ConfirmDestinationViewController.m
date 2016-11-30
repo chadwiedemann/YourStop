@@ -36,9 +36,9 @@
     [self.maps setRegion:region];
     [self.maps addAnnotation:annotation];
     
-        UIBarButtonItem *editButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editLocation)];
-    
-        self.navigationItem.rightBarButtonItem = editButton;
+//        UIBarButtonItem *editButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editLocation)];
+//    
+//        self.navigationItem.rightBarButtonItem = editButton;
     
     // set up circle
     double meters = self.selectedLocation.miles*1609.34;
@@ -75,11 +75,6 @@
     [self.navigationController pushViewController:sleepingVC animated:YES];
 }
 
-
--(void)editLocation
-{
-    
-}
 
 
 
