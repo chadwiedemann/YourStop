@@ -11,9 +11,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import <UserNotifications/UserNotifications.h>
 
+
 @interface SleepingViewController () <LocationManagerDelegate>
 
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) NSString *audioPath;
 
 @end
 
@@ -39,6 +41,8 @@
         }
     }];
 
+    //creating shared audiosession
+    
     
 
 }
@@ -52,6 +56,15 @@
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
 
+    //set audio session
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    NSError *error = nil;
+    NSLog(@"Activating audio session");
+    [audioSession setCategory:AVAudioSessionCategoryPlayback withOptions:AVAudioSessionCategoryOptionDuckOthers error:&error];
+    [audioSession setActive:YES error:&error];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
+    self.audioPath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@".wav"];
 }
 
 -(void) didUpdateLocation:(CLLocation *)location
@@ -62,31 +75,35 @@
     if (distance < [self milesSettingInMeters]) {
         [[LocationManager sharedInstance] stopUpdatingLocation];
         NSLog(@"play music here");
+    
+        //create shared audio session
+        
+        
+    
+        NSURL *backGroundSound = [NSURL fileURLWithPath:self.audioPath];
+        NSError *error1;
+        
+        AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL: backGroundSound error:&error1];
+        [player setVolume:30.0];
+        [player play];
+        
+        
         
         //create alarm trigger content
         self.content = [[UNMutableNotificationContent alloc] init];
-        self.content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
-        self.content.body = [NSString localizedUserNotificationStringForKey:@"Wake up time to get off the buss!" arguments:nil];
-//        self.content.badge = [NSNumber numberWithInt:1];
+        self.content.title = [NSString localizedUserNotificationStringForKey:@"Wake up!" arguments:nil];
+        self.content.body = [NSString localizedUserNotificationStringForKey: [NSString stringWithFormat: @"Your stop is coming up in %f miles",self.destination.miles] arguments:nil];
         NSString *soundName = [NSString stringWithFormat:@"%@.wav", self.destination.ringTone];
-        
-        self.content.sound = [UNNotificationSound soundNamed:soundName];
-       
+//        self.content.sound = [UNNotificationSound soundNamed:soundName];
         self.trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO];
-        
         //creating the request by adding content and trigger information
         UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:self.trigger];
         [self.center addNotificationRequest:bussAlarm withCompletionHandler:^(NSError * _Nullable error) {
             if(error){
                 NSLog(@"%@",error.localizedDescription);
             }
-            NSLog(@"add somekind of annimation");
         }];
-        [self.center getPendingNotificationRequestsWithCompletionHandler:^(NSArray<UNNotificationRequest *> * _Nonnull requests) {
-            NSLog(@"WE HAVE A PENDING REQUEST");
-            NSLog(@"%@",[requests objectAtIndex:0]);
-        }];
-
+    
     }
 }
 
@@ -172,43 +189,36 @@
     NSLog(@"Time to wakkkkkeeee upppp and create the method to ring the phone");
 }
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
-{
-    CLLocation *destinationLocation = [[CLLocation alloc]initWithCoordinate:self.destination.coordinate altitude:0 horizontalAccuracy:1 verticalAccuracy:1 timestamp:[NSDate date]];
-    CLLocationDistance metersToDestination = [self.locationManager.location distanceFromLocation:destinationLocation];
-    
-    if(metersToDestination < [self milesSettingInMeters]){
-        
-        self.timeTrigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:(10) repeats:NO];
-        
-        //create content
-        self.content = [[UNMutableNotificationContent alloc] init];
-        self.content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
-        self.content.body = [NSString localizedUserNotificationStringForKey:@"Wake up time to get off the buss!" arguments:nil];
-        self.content.sound = [UNNotificationSound soundNamed:self.destination.ringTone];
-        NSLog(@"%@",self.destination.ringTone);
-        
-        //creating the request by adding content and trigger information
-        UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:self.timeTrigger];
-        
-        [self.center addNotificationRequest:bussAlarm withCompletionHandler:^(NSError * _Nullable error) {
-            if(error){
-                NSLog(@"%@",error.localizedDescription);
-            }
-            NSLog(@"add somekind of annimation");
-        }];
-
-    }
-
-
-
-
-
-
-    NSLog(@"distance checked for the %d time",self.checked);
-    self.checked++;
-    self.testingLabel.text = [NSString stringWithFormat:@"%d",self.checked] ;
-}
+//-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
+//{
+//    CLLocation *destinationLocation = [[CLLocation alloc]initWithCoordinate:self.destination.coordinate altitude:0 horizontalAccuracy:1 verticalAccuracy:1 timestamp:[NSDate date]];
+//    CLLocationDistance metersToDestination = [self.locationManager.location distanceFromLocation:destinationLocation];
+//    
+//    if(metersToDestination < [self milesSettingInMeters]){
+//        
+//        self.timeTrigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:(10) repeats:NO];
+//        
+//        //create content
+//        self.content = [[UNMutableNotificationContent alloc] init];
+//        self.content.title = [NSString localizedUserNotificationStringForKey:@"Hello!" arguments:nil];
+//        self.content.body = [NSString localizedUserNotificationStringForKey:@"Wake up time to get off the buss!" arguments:nil];
+//        self.content.sound = [UNNotificationSound soundNamed:self.destination.ringTone];
+//        NSLog(@"%@",self.destination.ringTone);
+//        
+//        //creating the request by adding content and trigger information
+//        UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:self.timeTrigger];
+//        
+//        [self.center addNotificationRequest:bussAlarm withCompletionHandler:^(NSError * _Nullable error) {
+//            if(error){
+//                NSLog(@"%@",error.localizedDescription);
+//            }
+//            NSLog(@"add somekind of annimation");
+//        }];
+//    }
+//    NSLog(@"distance checked for the %d time",self.checked);
+//    self.checked++;
+//    self.testingLabel.text = [NSString stringWithFormat:@"%d",self.checked] ;
+//}
 
 - (void)popVC
 {

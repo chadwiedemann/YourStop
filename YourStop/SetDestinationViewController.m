@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.searchBar.delegate = self;
 //    if(!self.destinationPin){
 //        self.destinationPin = [[Destination alloc]initWithLocation:self.locationManager.location.coordinate];
 //        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.userLocation, 800, 800);
