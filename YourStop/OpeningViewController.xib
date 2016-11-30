@@ -35,9 +35,9 @@
                         <constraint firstAttribute="height" constant="150" id="ns8-2X-Pb2"/>
                     </constraints>
                 </imageView>
-                <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U3-mK-0rR">
+                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U3-mK-0rR">
                     <rect key="frame" x="113.66666666666669" y="431.66666666666669" width="200" height="40"/>
-                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.15294117647058825" green="0.68235294117647061" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="ngx-CR-GRJ"/>
                         <constraint firstAttribute="width" constant="200" id="sSf-dZ-ivR"/>
@@ -55,9 +55,9 @@
                         <action selector="btnSavedLocation:" destination="-1" eventType="touchUpInside" id="Eet-pU-y83"/>
                     </connections>
                 </button>
-                <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjf-cV-dtW">
+                <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjf-cV-dtW">
                     <rect key="frame" x="134" y="491.66666666666663" width="160" height="39.999999999999886"/>
-                    <color key="backgroundColor" red="0.41223774760402687" green="0.52880645158389272" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="TkR-HK-KT5"/>
                         <constraint firstAttribute="width" constant="160" id="fB8-NX-UnZ"/>
