@@ -34,10 +34,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yourStopLogo" translatesAutoresizingMaskIntoConstraints="NO" id="yhG-d4-PXB">
-                                <rect key="frame" x="137.5" y="189.5" width="100" height="100"/>
+                                <rect key="frame" x="112.5" y="139.5" width="150" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="UxW-Dq-KGF"/>
-                                    <constraint firstAttribute="height" constant="100" id="eT8-Bh-ejB"/>
+                                    <constraint firstAttribute="width" constant="150" id="UxW-Dq-KGF"/>
+                                    <constraint firstAttribute="height" constant="150" id="eT8-Bh-ejB"/>
                                 </constraints>
                             </imageView>
                         </subviews>
