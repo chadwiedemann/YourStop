@@ -62,9 +62,9 @@
     // Set up ring tone picker view
     pickerRingToneArray = [[NSMutableArray alloc]init];
     [pickerRingToneArray addObject:@"AfricanFunLong"];
-    [pickerRingToneArray addObject:@"MrJasonJazz"];
-    [pickerRingToneArray addObject:@"HouseParty"];
-    [pickerRingToneArray addObject:@"TechologicalWAV"];
+    [pickerRingToneArray addObject:@"InSearchOfAsia"];
+    [pickerRingToneArray addObject:@"Techological"];
+    [pickerRingToneArray addObject:@"MusicThemeAffair"];
     
     
     // Set the border for the picker view
@@ -85,8 +85,8 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    self.editingDestination.ringTone = @"AfricanFunLong.wav";
-    self.lblRingToneDisplay.text = @"AfricanFunLong.wav";
+    self.editingDestination.ringTone = @"AfricanFunLong";
+    self.lblRingToneDisplay.text = @"AfricanFunLong";
 
 }
 
@@ -325,7 +325,7 @@
         self.editingDestination.ringTone = audioName;
     
         // Play the audio
-        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:audioName ofType:@".wav"];
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:audioName ofType:@"mp3"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         
         self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];
@@ -354,6 +354,8 @@
     [dataAccess addDestination:self.editingDestination];
 //    [dataAccess.destinationsArray addObject:self.editingDestination];
     
+    [self.audioPlayer stop];
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
@@ -376,5 +378,6 @@
 - (IBAction)btnSavePressed:(id)sender {
     
     [self saveSettings];
+    
 }
 @end
