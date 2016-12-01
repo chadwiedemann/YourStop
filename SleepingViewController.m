@@ -136,12 +136,6 @@
         [self.audioPlayer play];
         
         
-        // Push to Wake up view controller
-        WakeUpViewController *wakeUpVc = [[WakeUpViewController alloc]initWithNibName:@"WakeUpViewController" bundle:nil];
-        
-        [self.navigationController pushViewController:wakeUpVc animated:YES];
-
-    
     }
     
     
