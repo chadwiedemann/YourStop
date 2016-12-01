@@ -10,6 +10,7 @@
 #import "Destination.h"
 #import <UserNotifications/UserNotifications.h>
 #import <CoreLocation/CoreLocation.h>
+#import "DAO.h"
 
 
 @interface SleepingViewController : UIViewController <CLLocationManagerDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
@@ -23,6 +24,9 @@
 @property (nonatomic, strong) UNUserNotificationCenter *center;
 @property (nonatomic, strong) UNTimeIntervalNotificationTrigger *timeTrigger;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) DAO *access;
+
+
 
 //uilocalnotification section
 
