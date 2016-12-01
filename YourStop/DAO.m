@@ -55,6 +55,11 @@
     return _sharedInstance;
 }
 
+-(void)initialSetup
+{
+    
+}
+
 -(void)addDestination:(Destination *)destination
 {
     if(self.destinationsArray == nil){

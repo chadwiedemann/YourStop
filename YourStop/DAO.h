@@ -16,10 +16,12 @@
 + (DAO*)sharedInstanceOfDAO;
 @property (nonatomic,strong) NSMutableArray <Destination*> *destinationsArray;
 @property (nonatomic, strong) NSMutableArray <DestinationMO*> *destinationsArrayMO;
+@property BOOL isSleeping;
 
 -(void)addDestination: (Destination*) destination;
 -(void)deleteDestination: (Destination*) destination;
 -(Destination*)createDestinationFromMO: (DestinationMO*) destinationMO;
+
 
 //core data setup
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;

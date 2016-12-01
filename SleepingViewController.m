@@ -50,6 +50,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You have set an alarm." message: [NSString stringWithFormat:@"The alarm will be triggered %.1f miles from %@.  We highly recommend the use of head phones or earbuds to ensure you wake at the correct time and do not disturb fellow commuters!",self.destination.miles,self.destination.destinationName] preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
@@ -134,6 +135,10 @@
         self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];
         [self.audioPlayer setVolume:30.0];
         [self.audioPlayer play];
+        
+        self.access = [DAO sharedInstanceOfDAO];
+        self.access.isSleeping = YES;
+
         
         
     }
