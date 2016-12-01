@@ -18,6 +18,7 @@
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) Destination *destinationPin;
 @property CLLocationCoordinate2D userLocation;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 
 @end
