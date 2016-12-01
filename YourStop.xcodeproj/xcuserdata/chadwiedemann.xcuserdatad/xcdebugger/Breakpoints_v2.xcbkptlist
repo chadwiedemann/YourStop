@@ -26,7 +26,7 @@
                   moduleName = "YourStop"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chadwiedemann/Desktop/TurnToTech%20info/YourStop/YourStop/YourStop/DAO.m"
-                  timestampString = "502128172.961526"
+                  timestampString = "502240307.652258"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
@@ -41,7 +41,7 @@
                   moduleName = "YourStop"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/chadwiedemann/Desktop/TurnToTech%20info/YourStop/YourStop/YourStop/DAO.m"
-                  timestampString = "502128172.963759"
+                  timestampString = "502240307.653884"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "82"
@@ -74,13 +74,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SleepingViewController.m"
-            timestampString = "502137473.888079"
+            timestampString = "502233755.898374"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "@implementation SleepingViewController"
-            landmarkType = "3">
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YourStop/SettingsViewController.m"
+            timestampString = "502232734.062319"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
+            landmarkName = "-pickerView:didSelectRow:inComponent:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SleepingViewController.m"
+            timestampString = "502239733.36251"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
