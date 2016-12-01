@@ -24,12 +24,12 @@
 		205E3F841DDBBA0E00957764 /* DestinationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 205E3F821DDBBA0E00957764 /* DestinationTableViewCell.xib */; };
 		20C24A4D1DE36342001B9565 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A4C1DE36342001B9565 /* Launch Screen.storyboard */; };
 		20C24A981DED0C2A001B9565 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C24A971DED0C2A001B9565 /* LocationManager.m */; };
-		20C24A9A1DED3F5E001B9565 /* TechologicalWAV.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A991DED3F5E001B9565 /* TechologicalWAV.wav */; };
-		20C24A9C1DEDE6FC001B9565 /* HouseParty.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A9B1DEDE6FC001B9565 /* HouseParty.wav */; };
-		20C24A9E1DEDE705001B9565 /* AfricanFunLong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A9D1DEDE705001B9565 /* AfricanFunLong.wav */; };
-		20C24AA01DEDE70C001B9565 /* MrJasonJazz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A9F1DEDE70C001B9565 /* MrJasonJazz.wav */; };
 		20C24AA51DEF7ECF001B9565 /* WakeUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C24AA31DEF7ECF001B9565 /* WakeUpViewController.m */; };
 		20C24AA61DEF7ECF001B9565 /* WakeUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20C24AA41DEF7ECF001B9565 /* WakeUpViewController.xib */; };
+		20C24AA81DF0ABD4001B9565 /* AfricanFunLong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24AA71DF0ABD4001B9565 /* AfricanFunLong.mp3 */; };
+		20C24AAD1DF0ABE1001B9565 /* MusicThemeAffair.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24AAA1DF0ABE1001B9565 /* MusicThemeAffair.mp3 */; };
+		20C24AAE1DF0ABE1001B9565 /* Techological.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24AAB1DF0ABE1001B9565 /* Techological.mp3 */; };
+		20C24AB01DF0B0D3001B9565 /* InSearchOfAsia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24AAF1DF0B0D3001B9565 /* InSearchOfAsia.mp3 */; };
 		D83C0A0C1DC79B6F00B41470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0B1DC79B6F00B41470 /* main.m */; };
 		D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0E1DC79B6F00B41470 /* AppDelegate.m */; };
 		D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A161DC79B6F00B41470 /* YourStop.xcdatamodeld */; };
@@ -69,13 +69,13 @@
 		20C24A4C1DE36342001B9565 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		20C24A961DED0C2A001B9565 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
 		20C24A971DED0C2A001B9565 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
-		20C24A991DED3F5E001B9565 /* TechologicalWAV.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TechologicalWAV.wav; sourceTree = "<group>"; };
-		20C24A9B1DEDE6FC001B9565 /* HouseParty.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HouseParty.wav; sourceTree = "<group>"; };
-		20C24A9D1DEDE705001B9565 /* AfricanFunLong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AfricanFunLong.wav; sourceTree = "<group>"; };
-		20C24A9F1DEDE70C001B9565 /* MrJasonJazz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MrJasonJazz.wav; sourceTree = "<group>"; };
 		20C24AA21DEF7ECF001B9565 /* WakeUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WakeUpViewController.h; sourceTree = "<group>"; };
 		20C24AA31DEF7ECF001B9565 /* WakeUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WakeUpViewController.m; sourceTree = "<group>"; };
 		20C24AA41DEF7ECF001B9565 /* WakeUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WakeUpViewController.xib; sourceTree = "<group>"; };
+		20C24AA71DF0ABD4001B9565 /* AfricanFunLong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AfricanFunLong.mp3; sourceTree = "<group>"; };
+		20C24AAA1DF0ABE1001B9565 /* MusicThemeAffair.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MusicThemeAffair.mp3; sourceTree = "<group>"; };
+		20C24AAB1DF0ABE1001B9565 /* Techological.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Techological.mp3; sourceTree = "<group>"; };
+		20C24AAF1DF0B0D3001B9565 /* InSearchOfAsia.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = InSearchOfAsia.mp3; sourceTree = "<group>"; };
 		D83C0A071DC79B6F00B41470 /* YourStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83C0A0B1DC79B6F00B41470 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D83C0A0D1DC79B6F00B41470 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -176,10 +176,10 @@
 		20C24A4E1DE3EA2E001B9565 /* Audios */ = {
 			isa = PBXGroup;
 			children = (
-				20C24A991DED3F5E001B9565 /* TechologicalWAV.wav */,
-				20C24A9D1DEDE705001B9565 /* AfricanFunLong.wav */,
-				20C24A9F1DEDE70C001B9565 /* MrJasonJazz.wav */,
-				20C24A9B1DEDE6FC001B9565 /* HouseParty.wav */,
+				20C24AAF1DF0B0D3001B9565 /* InSearchOfAsia.mp3 */,
+				20C24AAA1DF0ABE1001B9565 /* MusicThemeAffair.mp3 */,
+				20C24AAB1DF0ABE1001B9565 /* Techological.mp3 */,
+				20C24AA71DF0ABD4001B9565 /* AfricanFunLong.mp3 */,
 			);
 			name = Audios;
 			sourceTree = "<group>";
@@ -290,7 +290,7 @@
 				TargetAttributes = {
 					D83C0A061DC79B6F00B41470 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = P44YFW78FY;
+						DevelopmentTeam = M5F29Q3684;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -324,19 +324,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				205E3F651DDBB10000957764 /* DestinationTableViewController.xib in Resources */,
+				20C24AAD1DF0ABE1001B9565 /* MusicThemeAffair.mp3 in Resources */,
 				205E3F7E1DDBB26300957764 /* SleepingViewController.xib in Resources */,
 				205E3F781DDBB20900957764 /* ConfirmDestinationViewController.xib in Resources */,
-				20C24AA01DEDE70C001B9565 /* MrJasonJazz.wav in Resources */,
 				205E3F6F1DDBB15100957764 /* SettingsViewController.xib in Resources */,
 				205E3F6A1DDBB12900957764 /* SetDestinationViewController.xib in Resources */,
-				20C24A9A1DED3F5E001B9565 /* TechologicalWAV.wav in Resources */,
 				20C24AA61DEF7ECF001B9565 /* WakeUpViewController.xib in Resources */,
 				205E3F841DDBBA0E00957764 /* DestinationTableViewCell.xib in Resources */,
+				20C24AA81DF0ABD4001B9565 /* AfricanFunLong.mp3 in Resources */,
 				205E3F601DDBB0CC00957764 /* OpeningViewController.xib in Resources */,
-				20C24A9C1DEDE6FC001B9565 /* HouseParty.wav in Resources */,
 				D83C0A1A1DC79B6F00B41470 /* Assets.xcassets in Resources */,
+				20C24AAE1DF0ABE1001B9565 /* Techological.mp3 in Resources */,
+				20C24AB01DF0B0D3001B9565 /* InSearchOfAsia.mp3 in Resources */,
 				20C24A4D1DE36342001B9565 /* Launch Screen.storyboard in Resources */,
-				20C24A9E1DEDE705001B9565 /* AfricanFunLong.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
-				DEVELOPMENT_TEAM = P44YFW78FY;
+				DEVELOPMENT_TEAM = M5F29Q3684;
 				INFOPLIST_FILE = YourStop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Chad-Wiedemann-LLC.YourStop";
@@ -473,7 +473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
-				DEVELOPMENT_TEAM = P44YFW78FY;
+				DEVELOPMENT_TEAM = M5F29Q3684;
 				INFOPLIST_FILE = YourStop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Chad-Wiedemann-LLC.YourStop";

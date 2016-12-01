@@ -129,7 +129,7 @@
         
         //create shared audio session
         
-        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@".wav"];
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@"mp3"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         
         self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];
@@ -141,12 +141,6 @@
 
         
         
-        // Push to Wake up view controller
-        WakeUpViewController *wakeUpVc = [[WakeUpViewController alloc]initWithNibName:@"WakeUpViewController" bundle:nil];
-        
-        [self.navigationController pushViewController:wakeUpVc animated:YES];
-
-    
     }
     
     
