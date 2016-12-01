@@ -13,6 +13,7 @@
 
 
 @interface SleepingViewController : UIViewController <CLLocationManagerDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
+@property (strong, nonatomic) IBOutlet UIView *totalView;
 
 @property (weak, nonatomic) IBOutlet UILabel *testingLabel;
 @property (nonatomic, strong) Destination *destination;
