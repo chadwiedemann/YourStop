@@ -129,7 +129,7 @@
         
         //create shared audio session
         
-        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@".wav"];
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@"mp3"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         
         self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];
