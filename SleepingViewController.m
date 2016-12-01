@@ -65,14 +65,42 @@
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     
     
+    [UIView animateWithDuration:2 delay:0.0 options: (UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse) animations:^{
+//        self.totalView.backgroundColor = [UIColor blackColor];
+//        self.totalView.backgroundColor = [UIColor greenColor];
+//        self.totalView.backgroundColor = [UIColor grayColor];
+        self.totalView.backgroundColor = [UIColor whiteColor];
+        
+//        self.totalView.backgroundColor = [UIColor redColor];
+
+        self.totalView.backgroundColor = [UIColor greenColor];
+//        self.totalView.backgroundColor = [UIColor yellowColor];
+//        self.totalView.backgroundColor = [UIColor orangeColor];
+//         self.totalView.backgroundColor = [UIColor blueColor];
+        
+    } completion:nil];
     
-    self.audioPath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@".wav"];
-    NSURL *backGroundSound = [NSURL fileURLWithPath:self.audioPath];
-    NSError *error1;
     
-    AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL: backGroundSound error:&error1];
-    [player setVolume:30.0];
-    [player play];
+//    self.totalView.animateWithDuration(2, delay: 0.0, options:[UIViewAnimationOptions.Repeat, UIViewAnimationOptions.Autoreverse], animations: {
+//        self.view.backgroundColor = UIColor.blackColor()
+//        self.view.backgroundColor = UIColor.greenColor()
+//        self.view.backgroundColor = UIColor.grayColor()
+//        self.view.backgroundColor = UIColor.redColor()
+//    }, completion: nil)
+    
+    
+//    self.totalView.backgroundColor = [UIColor whiteColor];
+//    [UIView animateWithDuration:10.0 animations:^{
+//        self.totalView.backgroundColor = [UIColor redColor];
+//    }];
+    
+//    self.audioPath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@".wav"];
+//    NSURL *backGroundSound = [NSURL fileURLWithPath:self.audioPath];
+//    NSError *error1;
+//    
+//    AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL: backGroundSound error:&error1];
+//    [player setVolume:30.0];
+//    [player play];
 }
 
 -(void) didUpdateLocation:(CLLocation *)location
@@ -82,32 +110,12 @@
     
     if (distance < [self milesSettingInMeters]) {
         [[LocationManager sharedInstance] stopUpdatingLocation];
-        NSLog(@"play music here");
-    
-        //create shared audio session
-        
-        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@".wav"];
-        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        
-        self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];
-        [self.audioPlayer setVolume:30.0];
-        [self.audioPlayer play];
-    
-//        NSURL *backGroundSound = [NSURL fileURLWithPath:self.audioPath];
-//        NSError *error1;
-//        
-//        AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL: backGroundSound error:&error1];
-//        [player setVolume:30.0];
-//        [player play];
-        
         
         
         //create alarm trigger content
         self.content = [[UNMutableNotificationContent alloc] init];
         self.content.title = [NSString localizedUserNotificationStringForKey:@"Wake up!" arguments:nil];
-        self.content.body = [NSString localizedUserNotificationStringForKey: [NSString stringWithFormat: @"Your stop is coming up in %f miles",self.destination.miles] arguments:nil];
-        NSString *soundName = [NSString stringWithFormat:@"%@.wav", self.destination.ringTone];
-        self.content.sound = [UNNotificationSound soundNamed:soundName];
+        self.content.body = [NSString localizedUserNotificationStringForKey: [NSString stringWithFormat: @"Your stop is coming up in %.1f miles",self.destination.miles] arguments:nil];
         self.trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO];
         //creating the request by adding content and trigger information
         UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:self.trigger];
@@ -116,6 +124,16 @@
                 NSLog(@"%@",error.localizedDescription);
             }
         }];
+        
+        //create shared audio session
+        
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@".wav"];
+        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
+        
+        self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];
+        [self.audioPlayer setVolume:30.0];
+        [self.audioPlayer play];
+        
     
     }
 }
@@ -237,7 +255,7 @@
 - (void)popVC
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"You are cancling the alarm set to wake you %.1f miles from %@", self.destination.miles, self.destination.destinationName]
-                                                    message:@"...Do you want to proceed?"
+                                                    message:@"Do you want to proceed?"
                                                    delegate:self
                                           cancelButtonTitle:@"No"
                                           otherButtonTitles:@"Yes", nil];
