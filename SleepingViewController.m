@@ -10,6 +10,7 @@
 #import "LocationManager.h"
 #import <AVFoundation/AVFoundation.h>
 #import <UserNotifications/UserNotifications.h>
+#import "WakeUpViewController.h"
 
 
 @interface SleepingViewController () <LocationManagerDelegate>
@@ -134,8 +135,16 @@
         [self.audioPlayer setVolume:30.0];
         [self.audioPlayer play];
         
+        
+        // Push to Wake up view controller
+        WakeUpViewController *wakeUpVc = [[WakeUpViewController alloc]initWithNibName:@"WakeUpViewController" bundle:nil];
+        
+        [self.navigationController pushViewController:wakeUpVc animated:YES];
+
     
     }
+    
+    
 }
 
 
