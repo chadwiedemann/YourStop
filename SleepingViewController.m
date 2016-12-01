@@ -64,7 +64,15 @@
     [audioSession setActive:YES error:&error];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
     
+    
+    
     self.audioPath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@".wav"];
+    NSURL *backGroundSound = [NSURL fileURLWithPath:self.audioPath];
+    NSError *error1;
+    
+    AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL: backGroundSound error:&error1];
+    [player setVolume:30.0];
+    [player play];
 }
 
 -(void) didUpdateLocation:(CLLocation *)location
@@ -78,14 +86,19 @@
     
         //create shared audio session
         
+        NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:self.destination.ringTone ofType:@".wav"];
+        NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
         
+        self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];
+        [self.audioPlayer setVolume:30.0];
+        [self.audioPlayer play];
     
-        NSURL *backGroundSound = [NSURL fileURLWithPath:self.audioPath];
-        NSError *error1;
-        
-        AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL: backGroundSound error:&error1];
-        [player setVolume:30.0];
-        [player play];
+//        NSURL *backGroundSound = [NSURL fileURLWithPath:self.audioPath];
+//        NSError *error1;
+//        
+//        AVAudioPlayer *player = [[AVAudioPlayer alloc]initWithContentsOfURL: backGroundSound error:&error1];
+//        [player setVolume:30.0];
+//        [player play];
         
         
         
@@ -94,7 +107,7 @@
         self.content.title = [NSString localizedUserNotificationStringForKey:@"Wake up!" arguments:nil];
         self.content.body = [NSString localizedUserNotificationStringForKey: [NSString stringWithFormat: @"Your stop is coming up in %f miles",self.destination.miles] arguments:nil];
         NSString *soundName = [NSString stringWithFormat:@"%@.wav", self.destination.ringTone];
-//        self.content.sound = [UNNotificationSound soundNamed:soundName];
+        self.content.sound = [UNNotificationSound soundNamed:soundName];
         self.trigger = [UNTimeIntervalNotificationTrigger triggerWithTimeInterval:1 repeats:NO];
         //creating the request by adding content and trigger information
         UNNotificationRequest *bussAlarm = [UNNotificationRequest requestWithIdentifier:@"alarm" content:self.content trigger:self.trigger];
