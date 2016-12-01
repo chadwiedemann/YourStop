@@ -33,8 +33,18 @@
     MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
     [annotation setCoordinate:coordinates];
     
+    annotation.title = @"Your Stop";
+    annotation.subtitle = @"You'll be notified after crossing the red boundry";
+    
     [self.maps setRegion:region];
     [self.maps addAnnotation:annotation];
+    
+//    [self.maps selectAnnotation:annotation animated:YES];
+    
+    // show the current location
+    self.maps.showsUserLocation = YES;
+    
+
     
 //        UIBarButtonItem *editButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editLocation)];
 //    

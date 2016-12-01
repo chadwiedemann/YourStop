@@ -28,6 +28,8 @@
 		20C24A9C1DEDE6FC001B9565 /* HouseParty.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A9B1DEDE6FC001B9565 /* HouseParty.wav */; };
 		20C24A9E1DEDE705001B9565 /* AfricanFunLong.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A9D1DEDE705001B9565 /* AfricanFunLong.wav */; };
 		20C24AA01DEDE70C001B9565 /* MrJasonJazz.wav in Resources */ = {isa = PBXBuildFile; fileRef = 20C24A9F1DEDE70C001B9565 /* MrJasonJazz.wav */; };
+		20C24AA51DEF7ECF001B9565 /* WakeUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C24AA31DEF7ECF001B9565 /* WakeUpViewController.m */; };
+		20C24AA61DEF7ECF001B9565 /* WakeUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20C24AA41DEF7ECF001B9565 /* WakeUpViewController.xib */; };
 		D83C0A0C1DC79B6F00B41470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0B1DC79B6F00B41470 /* main.m */; };
 		D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0E1DC79B6F00B41470 /* AppDelegate.m */; };
 		D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A161DC79B6F00B41470 /* YourStop.xcdatamodeld */; };
@@ -71,6 +73,9 @@
 		20C24A9B1DEDE6FC001B9565 /* HouseParty.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = HouseParty.wav; sourceTree = "<group>"; };
 		20C24A9D1DEDE705001B9565 /* AfricanFunLong.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = AfricanFunLong.wav; sourceTree = "<group>"; };
 		20C24A9F1DEDE70C001B9565 /* MrJasonJazz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MrJasonJazz.wav; sourceTree = "<group>"; };
+		20C24AA21DEF7ECF001B9565 /* WakeUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WakeUpViewController.h; sourceTree = "<group>"; };
+		20C24AA31DEF7ECF001B9565 /* WakeUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WakeUpViewController.m; sourceTree = "<group>"; };
+		20C24AA41DEF7ECF001B9565 /* WakeUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WakeUpViewController.xib; sourceTree = "<group>"; };
 		D83C0A071DC79B6F00B41470 /* YourStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D83C0A0B1DC79B6F00B41470 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D83C0A0D1DC79B6F00B41470 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -179,6 +184,16 @@
 			name = Audios;
 			sourceTree = "<group>";
 		};
+		20C24AA11DEF7E91001B9565 /* WakeUpView */ = {
+			isa = PBXGroup;
+			children = (
+				20C24AA21DEF7ECF001B9565 /* WakeUpViewController.h */,
+				20C24AA31DEF7ECF001B9565 /* WakeUpViewController.m */,
+				20C24AA41DEF7ECF001B9565 /* WakeUpViewController.xib */,
+			);
+			name = WakeUpView;
+			sourceTree = "<group>";
+		};
 		D83C09FE1DC79B6F00B41470 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +232,7 @@
 				205E3F721DDBB1A300957764 /* DestinationTableView */,
 				205E3F791DDBB20F00957764 /* ConfirmDestinationView */,
 				205E3F7F1DDBB26700957764 /* SleepingView */,
+				20C24AA11DEF7E91001B9565 /* WakeUpView */,
 				D83C0A191DC79B6F00B41470 /* Assets.xcassets */,
 				D83C0A1E1DC79B6F00B41470 /* Info.plist */,
 				20C24A4E1DE3EA2E001B9565 /* Audios */,
@@ -314,6 +330,7 @@
 				205E3F6F1DDBB15100957764 /* SettingsViewController.xib in Resources */,
 				205E3F6A1DDBB12900957764 /* SetDestinationViewController.xib in Resources */,
 				20C24A9A1DED3F5E001B9565 /* TechologicalWAV.wav in Resources */,
+				20C24AA61DEF7ECF001B9565 /* WakeUpViewController.xib in Resources */,
 				205E3F841DDBBA0E00957764 /* DestinationTableViewCell.xib in Resources */,
 				205E3F601DDBB0CC00957764 /* OpeningViewController.xib in Resources */,
 				20C24A9C1DEDE6FC001B9565 /* HouseParty.wav in Resources */,
@@ -343,6 +360,7 @@
 				205E3F831DDBBA0E00957764 /* DestinationTableViewCell.m in Sources */,
 				205E3F5B1DDB8FF100957764 /* Destination.m in Sources */,
 				205E3F7D1DDBB26300957764 /* SleepingViewController.m in Sources */,
+				20C24AA51DEF7ECF001B9565 /* WakeUpViewController.m in Sources */,
 				205E3F5F1DDBB0CC00957764 /* OpeningViewController.m in Sources */,
 				D83C0A0C1DC79B6F00B41470 /* main.m in Sources */,
 			);

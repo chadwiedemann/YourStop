@@ -36,14 +36,14 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8U3-mK-0rR">
-                    <rect key="frame" x="113.66666666666669" y="431.66666666666669" width="200" height="40"/>
+                    <rect key="frame" x="123.66666666666669" y="431.66666666666669" width="180" height="40"/>
                     <color key="backgroundColor" red="0.15294117647058825" green="0.68235294117647061" blue="0.37647058823529411" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="ngx-CR-GRJ"/>
-                        <constraint firstAttribute="width" constant="200" id="sSf-dZ-ivR"/>
+                        <constraint firstAttribute="width" constant="180" id="sSf-dZ-ivR"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
-                    <state key="normal" title="Saved location">
+                    <state key="normal" title="My Locations">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
