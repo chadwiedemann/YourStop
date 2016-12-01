@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "DAO.h"
+#import "WakeUpViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
