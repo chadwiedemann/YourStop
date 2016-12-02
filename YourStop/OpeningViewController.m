@@ -37,7 +37,15 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    DAO *access = [DAO sharedInstanceOfDAO];
+    if(access.commuteTooLong){
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Time lapsed" message: @"Your commute surpased the maximum allowable commute time.  YourStop has cancled the alarm.  Please only use YourStop for commutes of 2.5 hours or less." preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
     // Hide the navigation bar in this view controller
     self.navigationController.navigationBar.hidden = YES;
 }

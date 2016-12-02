@@ -42,7 +42,7 @@
 //    [self.maps selectAnnotation:annotation animated:YES];
     
     // show the current location
-    self.maps.showsUserLocation = YES;
+    
     
 
     
@@ -58,6 +58,23 @@
     [self.maps addOverlay:circle];
     
     
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.maps.showsUserLocation = YES;
+    [self.maps.userLocation addObserver:self forKeyPath:@"location" options:0 context:NULL];
+}
+
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"location"]) {
+        [self.maps showAnnotations:@[self.selectedLocation, self.maps.userLocation] animated:YES];
+    }
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.maps.userLocation removeObserver:self forKeyPath:@"location"];
 }
 
 - (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {

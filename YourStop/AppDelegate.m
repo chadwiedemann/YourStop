@@ -55,7 +55,8 @@
         access.isSleeping = NO;
         WakeUpViewController *wakeUpVc = [[WakeUpViewController alloc]initWithNibName:@"WakeUpViewController" bundle:nil];
         [self.navigationController pushViewController:wakeUpVc animated:YES];
-        
+    }else if (access.commuteTooLong){
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
     
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.

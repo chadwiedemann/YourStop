@@ -25,7 +25,9 @@
 @property (nonatomic, strong) UNTimeIntervalNotificationTrigger *timeTrigger;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) DAO *access;
-
+@property (nonatomic, strong) NSDate *startTime;
+@property NSTimeInterval maxTime;
+@property BOOL timeJustStarted;
 
 
 //uilocalnotification section

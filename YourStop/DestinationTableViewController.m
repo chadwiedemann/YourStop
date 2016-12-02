@@ -99,7 +99,7 @@
     
     Destination *eachDestination = [self.destinationsArray objectAtIndex:indexPath.row];
     cell.lblDestinationName.text = eachDestination.destinationName;
-    cell.lblDistance.text = [NSString stringWithFormat:@"YourStop will awake you %.1f miles before your destination", eachDestination.miles];
+    cell.lblDistance.text = [NSString stringWithFormat:@"YourStop will wake you %.1f miles before your destination", eachDestination.miles];
     cell.imageView.image = [UIImage imageNamed:@"google_place_1"];
     
     // ADD accessory type to be able to edit the cell
