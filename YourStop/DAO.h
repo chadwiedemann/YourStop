@@ -17,6 +17,7 @@
 @property (nonatomic,strong) NSMutableArray <Destination*> *destinationsArray;
 @property (nonatomic, strong) NSMutableArray <DestinationMO*> *destinationsArrayMO;
 @property BOOL isSleeping;
+@property BOOL commuteTooLong;
 
 -(void)addDestination: (Destination*) destination;
 -(void)deleteDestination: (Destination*) destination;

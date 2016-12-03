@@ -50,7 +50,9 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-
+    self.timeJustStarted = YES;
+    //setting maxtime to 2.5 hours
+    self.maxTime = 60 * 60 * 2.5;
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You have set an alarm." message: [NSString stringWithFormat:@"The alarm will be triggered %.1f miles from %@.  We highly recommend the use of head phones or earbuds to ensure you wake at the correct time and do not disturb fellow commuters!",self.destination.miles,self.destination.destinationName] preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
@@ -107,6 +109,22 @@
 
 -(void) didUpdateLocation:(CLLocation *)location
 {
+    if(self.timeJustStarted)
+    {
+        self.startTime = [NSDate date];
+        self.timeJustStarted = NO;
+    }
+    if([self twoAndOneHalfHoursUp])
+    {
+        [[LocationManager sharedInstance]stopUpdatingLocation];
+        self.access = [DAO sharedInstanceOfDAO];
+        self.access.commuteTooLong = YES;
+        return;
+        
+    }
+    
+    
+    
     double distance = [location distanceFromLocation:[[CLLocation alloc] initWithLatitude:self.destination.coordinate.latitude
                                                                                 longitude:self.destination.coordinate.longitude]];
     
@@ -142,10 +160,17 @@
         
         
     }
-    
-    
 }
 
+-(BOOL)twoAndOneHalfHoursUp
+{
+    NSDate *now = [NSDate date];
+    if([now timeIntervalSinceDate:self.startTime] > self.maxTime){
+        return YES;
+    }else{
+        return NO;
+    }
+}
 
 -(void)viewDidDisappear:(BOOL)animated
 {
