@@ -39,6 +39,7 @@
     [super viewWillAppear:animated];
     DAO *access = [DAO sharedInstanceOfDAO];
     if(access.commuteTooLong){
+        access.commuteTooLong = NO;
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Time lapsed" message: @"Your commute surpased the maximum allowable commute time.  YourStop has cancled the alarm.  Please only use YourStop for commutes of 2.5 hours or less." preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
@@ -62,24 +63,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
 - (IBAction)btnSavedLocation:(id)sender {
-    
     // Create the next View controller
     DestinationTableViewController *destinationTableVC = [[DestinationTableViewController alloc]initWithNibName:@"DestinationTableViewController" bundle:nil];
-    
     [self.navigationController pushViewController:destinationTableVC animated:YES];
-
 }
 
 - (IBAction)btnNewLocation:(id)sender {

@@ -52,7 +52,7 @@
 {
     self.timeJustStarted = YES;
     //setting maxtime to 2.5 hours
-    self.maxTime = 60 * 60 * 2.5;
+    self.maxTime = 60;
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"You have set an alarm." message: [NSString stringWithFormat:@"The alarm will be triggered %.1f miles from %@.  We highly recommend the use of head phones or earbuds to ensure you wake at the correct time and do not disturb fellow commuters!",self.destination.miles,self.destination.destinationName] preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
