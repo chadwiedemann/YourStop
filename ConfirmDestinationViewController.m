@@ -34,8 +34,7 @@
     [annotation setCoordinate:coordinates];
     
     annotation.title = @"Your Stop";
-    annotation.subtitle = @"You'll be notified after crossing the red boundry";
-    
+    annotation.subtitle = @"notification within the red boundary";
     [self.maps setRegion:region];
     [self.maps addAnnotation:annotation];
     
