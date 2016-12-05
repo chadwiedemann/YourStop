@@ -14,25 +14,16 @@
 
 
 @interface SleepingViewController : UIViewController <CLLocationManagerDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
-@property (strong, nonatomic) IBOutlet UIView *totalView;
 
-@property (weak, nonatomic) IBOutlet UILabel *testingLabel;
+@property (strong, nonatomic) IBOutlet UIView *totalView;
 @property (nonatomic, strong) Destination *destination;
-@property double distanceInMeters;
 @property (nonatomic, strong) UNMutableNotificationContent *content;
 @property (nonatomic, strong) UNTimeIntervalNotificationTrigger *trigger;
 @property (nonatomic, strong) UNUserNotificationCenter *center;
-@property (nonatomic, strong) UNTimeIntervalNotificationTrigger *timeTrigger;
 @property (nonatomic, strong) CLLocationManager *locationManager;
 @property (nonatomic, strong) DAO *access;
 @property (nonatomic, strong) NSDate *startTime;
 @property NSTimeInterval maxTime;
 @property BOOL timeJustStarted;
-
-
-//uilocalnotification section
-
-
-@property int checked;
 
 @end

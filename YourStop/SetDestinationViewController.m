@@ -17,13 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.searchBar.delegate = self;
-//    if(!self.destinationPin){
-//        self.destinationPin = [[Destination alloc]initWithLocation:self.locationManager.location.coordinate];
-//        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.userLocation, 800, 800);
-//        [self.setDestinationMapView setRegion:[self.setDestinationMapView regionThatFits:region] animated:YES];
-//        [self.setDestinationMapView addAnnotation:self.destinationPin];
-//    }
-    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(moveToSettingsVC)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.setDestinationMapView.showsUserLocation = YES;
@@ -31,13 +24,10 @@
     self.setDestinationMapView.delegate = self;
     
     // Add Alert View to guide the user to use the pin drop
-    
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Please hold down the pin, then drag and drop it to your destination." preferredStyle:UIAlertControllerStyleAlert];
-    
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
     }];
-    
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
     
@@ -59,7 +49,6 @@
         [self.setDestinationMapView setRegion:[self.setDestinationMapView regionThatFits:region] animated:YES];
         [self.setDestinationMapView addAnnotation:self.destinationPin];
     }
-    
 }
 
 
@@ -75,7 +64,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-   
 }
 
 
@@ -84,7 +72,6 @@
 didChangeDragState:(MKAnnotationViewDragState)newState
    fromOldState:(MKAnnotationViewDragState)oldState
 {
-    
     if (newState == MKAnnotationViewDragStateEnding)
     {
         CLLocationCoordinate2D droppedAt = annotationView.annotation.coordinate;
@@ -101,9 +88,7 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     pinView.animatesDrop = YES;
     return pinView;
     }else{
-      
         return nil;
-        
     }
 }
 

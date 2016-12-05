@@ -16,9 +16,7 @@
     NSMutableArray *fractionNumberArray;
     NSMutableArray *pickerRingToneArray;
 }
-
 @property (nonatomic, strong) AVAudioPlayer *audioPlayer;
-
 
 @end
 
@@ -26,22 +24,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"hello here is data %f",self.editingDestination.coordinate.latitude);
-    
-    //
     self.txfLocationName.delegate = self;
     
     //keyboard dissapears when screen is tapped
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
-    
     [self.view addGestureRecognizer:tap];
 
-    
     // Set up the navigation bar
     UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveSettings)];
-    
     self.navigationItem.rightBarButtonItem = saveButton;
     
     // Set up the distance picker view
@@ -50,13 +42,10 @@
     for (int i = 0; i < 11; i++) {
         NSString *wholeNumber = [NSString stringWithFormat:@"%d", i];
         [pickerDistanceArray addObject:wholeNumber];
-        
     }
-    
     for (int j = 0; j < 10; j++) {
         NSString *fractionNumber = [NSString stringWithFormat:@"%d", j];
         [fractionNumberArray addObject:fractionNumber];
-        
     }
     
     // Set up ring tone picker view
@@ -66,28 +55,21 @@
     [pickerRingToneArray addObject:@"Techological"];
     [pickerRingToneArray addObject:@"MusicThemeAffair"];
     
-    
     // Set the border for the picker view
     self.pickerViewDistance.layer.borderColor = [UIColor darkGrayColor].CGColor;
     self.pickerViewDistance.layer.borderWidth = 2;
-    
     self.pickerViewRingTone.layer.borderColor = [UIColor darkGrayColor].CGColor;
     self.pickerViewRingTone.layer.borderWidth = 2;
-    
-    
-
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)viewDidAppear:(BOOL)animated
 {
     self.editingDestination.ringTone = @"AfricanFunLong";
     self.lblRingToneDisplay.text = @"AfricanFunLong";
-
 }
 
 #pragma mark - UIPicker view
@@ -102,14 +84,12 @@
     else if (pickerView == _pickerViewRingTone) {
         return 1;
     }
-    
     return number;
 }
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
-    
     NSInteger number = 0;
     if (pickerView == _pickerViewDistance) {
     NSInteger result = 0;
@@ -141,7 +121,6 @@
     }
     
     return number;
-    
 }
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component
@@ -171,7 +150,6 @@
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     NSString *title = @"";
-    
     if (pickerView == _pickerViewDistance) {
     NSString *resultString = @"";
     switch (component) {
@@ -207,10 +185,8 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (pickerView == _pickerViewDistance) {
-        
     NSString *wholeNumber = @"";
     NSString *fractionNumber = @"";
-    
     NSInteger firstComponentRow = [self.pickerViewDistance selectedRowInComponent:0];
     NSInteger thirdComponentRow = [self.pickerViewDistance selectedRowInComponent:2];
     
@@ -312,10 +288,8 @@
         double fractionalDistance = [fractionNumber doubleValue] / 10;
         double distance = [wholeNumber doubleValue] + fractionalDistance;
         self.editingDestination.miles = distance;
-        
         // the bottom layer for ring tone should disappear
         self.bottomViewLayer.hidden = YES;
-        
     }
     
     else if (pickerView == _pickerViewRingTone) {
@@ -327,20 +301,14 @@
         // Play the audio
         NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:audioName ofType:@"mp3"];
         NSURL *soundFileURL = [NSURL fileURLWithPath:soundFilePath];
-        
         self.audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:soundFileURL error:nil];
         [self.audioPlayer setVolume:30.0];
         [self.audioPlayer play];
-        
     }
-    
-    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-//    NSString *locationName = self.txfLocationName.text;
-//    self.editingDestination.destinationName = locationName;
     [self.txfLocationName resignFirstResponder];
     return YES;
 }
@@ -352,10 +320,7 @@
     self.editingDestination.destinationName = locationName;
     DAO *dataAccess =  [DAO sharedInstanceOfDAO];
     [dataAccess addDestination:self.editingDestination];
-//    [dataAccess.destinationsArray addObject:self.editingDestination];
-    
     [self.audioPlayer stop];
-    
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
@@ -369,15 +334,13 @@
     NSString *locationName = self.txfLocationName.text;
     self.editingDestination.destinationName = locationName;
     [self.txfLocationName resignFirstResponder];
-    
     // Hide the view layer at the middle view (ring tone view layer)
     self.middleViewLayer.hidden = YES;
     
 }
 
 - (IBAction)btnSavePressed:(id)sender {
-    
     [self saveSettings];
-    
 }
+
 @end

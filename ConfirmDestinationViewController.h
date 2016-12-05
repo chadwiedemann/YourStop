@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-
+#import "SleepingViewController.h"
 #import "Destination.h"
 
 @interface ConfirmDestinationViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate>
 
 @property (nonatomic, strong) Destination *selectedLocation;
 @property (nonatomic, strong) CLLocationManager *locationManager;
-
+@property (nonatomic, strong) SleepingViewController *sleepingVC;
 @property (weak, nonatomic) IBOutlet MKMapView *maps;
 
 - (IBAction)btnStartSleeping:(id)sender;

@@ -18,19 +18,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
     // Set the root view controller
     UIViewController *rootController = [[OpeningViewController alloc]initWithNibName:@"OpeningViewController" bundle:nil];
-    
     self.navigationController = [[UINavigationController alloc]initWithRootViewController:rootController];
-    
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     [self.window setRootViewController:self.navigationController];
     [self.window makeKeyAndVisible];
-    
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    
     return YES;
 }
 
@@ -49,6 +44,7 @@
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    //checks status on alarm and instucts the app to implement the appropriate procedure
     DAO *access = [DAO sharedInstanceOfDAO];
     if(access.isSleeping)
     {
@@ -58,7 +54,6 @@
     }else if (access.commuteTooLong){
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
-    
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
 }
 

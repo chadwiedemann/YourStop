@@ -15,40 +15,21 @@
 
 @interface DestinationTableViewController () <UITableViewDelegate, UITableViewDataSource>
 
-
-
 @end
 
 @implementation DestinationTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
     self.destinationTableView.delegate = self;
-    
-    // Test, fake destination object for testing the table view
-//    Destination *home = [[Destination alloc]initWithLocation:CLLocationCoordinate2DMake(40.89405917, -74.04534638)];
-//    home.destinationName = @"Home";
-//    home.miles = 1;
-//    home.ringTone = @"HouseParty.mp3";
-//    Destination *work = [[Destination alloc]init];
-//    work.destinationName = @"Work";
-//    work.miles = 1;
-    
     self.destinationsArray = [[NSMutableArray alloc]init];
     DAO *dataAccess = [DAO sharedInstanceOfDAO];
     [self.destinationsArray addObjectsFromArray:dataAccess.destinationsArray];
-//    [self.destinationsArray addObject:home];
-//    [self.destinationsArray addObject:work];
     
     // Set up the navigation bar
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewLocation)];
-    
     self.navigationItem.rightBarButtonItem = addButton;
-    
 
-    
     // Allow the select the cell during the editing mode
     self.destinationTableView.allowsSelectionDuringEditing = YES;
     
@@ -57,14 +38,12 @@
     if (self.destinationsArray.count == 0) {
         self.emptyView.hidden = NO;
     } else {
-        
         self.emptyView.hidden = YES;
     }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -83,9 +62,7 @@
 {
     // Create custom table view cell here
     static NSString *cellIdentifier = @"DestinationTableViewCell";
-    
     DestinationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
     if (cell == nil) {
         
         // Load the top-level objects from the custom cell XIB.
@@ -96,7 +73,6 @@
     }
     
     // Configure the cell
-    
     Destination *eachDestination = [self.destinationsArray objectAtIndex:indexPath.row];
     cell.lblDestinationName.text = eachDestination.destinationName;
     cell.lblDistance.text = [NSString stringWithFormat:@"YourStop will wake you %.1f miles before your destination", eachDestination.miles];
@@ -115,37 +91,27 @@
 {
     Destination *destination = self.destinationsArray[indexPath.row];
     
-    
     // Create the new view controller
     // Set it to the confirm destination view controller
     // Pass the destination object to the next view controller
     ConfirmDestinationViewController *confirmDestinatinVC = [[ConfirmDestinationViewController alloc]initWithNibName:@"ConfirmDestinationViewController" bundle:nil];
-    
     confirmDestinatinVC.selectedLocation = destination;
-    
     [self.navigationController pushViewController:confirmDestinatinVC animated:YES];
-    
 }
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the location on the row
-        
         DAO *access = [DAO sharedInstanceOfDAO];
-//        [access deleteDestination: [self.destinationsArray objectAtIndex:indexPath.row]];
-        
         [self.destinationsArray removeObjectAtIndex:indexPath.row];
         [access.destinationsArray removeObjectAtIndex:indexPath.row];
         [access.managedObjectContext deleteObject:[access.destinationsArrayMO objectAtIndex:indexPath.row]];
         [access.destinationsArrayMO removeObjectAtIndex:indexPath.row];
-
         [access saveContext];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
-    
     [tableView reloadData];
-    
     if (self.destinationsArray.count == 0) {
         self.emptyView.hidden = NO;
     }
@@ -157,18 +123,13 @@
 {
     // Create the next view controller
     SetDestinationViewController *setDestinationVC = [[SetDestinationViewController alloc]initWithNibName:@"SetDestinationViewController" bundle:nil];
-    
     [self.navigationController pushViewController:setDestinationVC animated:YES];
-    
 }
-
-
 
 - (IBAction)btnAddNewLocation:(id)sender {
     // Create the next view controller
     SetDestinationViewController *setDestinationVC = [[SetDestinationViewController alloc]initWithNibName:@"SetDestinationViewController" bundle:nil];
-    
     [self.navigationController pushViewController:setDestinationVC animated:YES];
-    
 }
+
 @end

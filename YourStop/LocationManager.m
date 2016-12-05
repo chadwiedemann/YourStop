@@ -71,8 +71,6 @@
     NSLog(@"Current location: %@ %@", @(mostRecentLocation.coordinate.latitude), @(mostRecentLocation.coordinate.longitude));
     
     NSDate *now = [NSDate date];
-//    NSTimeInterval interval = self.lastTimestamp ? [now timeIntervalSinceDate:self.lastTimestamp] : 0;
-
     NSTimeInterval interval = 0;
     if (self.lastTimestamp) {
         interval = [now timeIntervalSinceDate:self.lastTimestamp];
@@ -83,8 +81,6 @@
     if (!self.lastTimestamp || interval >= 1 * 10)
     {
         self.lastTimestamp = now;
-        //NSLog(@"Sending current location to web service.");
-        
         if (self.delegate) {
             if ([self.delegate respondsToSelector:@selector(didUpdateLocation:)]) {
                 [self.delegate didUpdateLocation:mostRecentLocation];
