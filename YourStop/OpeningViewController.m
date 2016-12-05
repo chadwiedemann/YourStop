@@ -27,23 +27,17 @@
     
     // Set the navigation item to color
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
-    
-    
-
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    //show alert to user if commute was too long for program
     DAO *access = [DAO sharedInstanceOfDAO];
     if(access.commuteTooLong){
         access.commuteTooLong = NO;
         UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Time lapsed" message: @"Your commute surpased the maximum allowable commute time.  YourStop has cancled the alarm.  Please only use YourStop for commutes of 2.5 hours or less." preferredStyle:UIAlertControllerStyleAlert];
-        
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {}];
-        
         [alert addAction:defaultAction];
         [self presentViewController:alert animated:YES completion:nil];
     }
@@ -53,14 +47,12 @@
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    
     // After this view controller disappear, show the navigation bar again
     self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)btnSavedLocation:(id)sender {
@@ -70,9 +62,8 @@
 }
 
 - (IBAction)btnNewLocation:(id)sender {
-    
     SetDestinationViewController *setDestinationVC = [[SetDestinationViewController alloc]initWithNibName:@"SetDestinationViewController" bundle:nil];
-    
     [self.navigationController pushViewController:setDestinationVC animated:YES];
 }
+
 @end
