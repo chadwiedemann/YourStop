@@ -290,7 +290,7 @@
 				TargetAttributes = {
 					D83C0A061DC79B6F00B41470 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = HMWV6CCYQG;
+						DevelopmentTeam = P44YFW78FY;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -461,11 +461,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = HMWV6CCYQG;
+				DEVELOPMENT_TEAM = P44YFW78FY;
 				INFOPLIST_FILE = YourStop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chadwiedemann.YStop;
+				PRODUCT_BUNDLE_IDENTIFIER = "Chad-Wiedemann-LLC.YourStop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -474,11 +473,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = HMWV6CCYQG;
+				DEVELOPMENT_TEAM = P44YFW78FY;
 				INFOPLIST_FILE = YourStop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.chadwiedemann.YStop;
+				PRODUCT_BUNDLE_IDENTIFIER = "Chad-Wiedemann-LLC.YourStop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
