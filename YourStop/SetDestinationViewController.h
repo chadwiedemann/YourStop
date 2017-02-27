@@ -11,8 +11,12 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Destination.h"
 #import "SettingsViewController.h"
+#import "IgnoreView.h"
 
 @interface SetDestinationViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate, UIScrollViewDelegate>
+- (IBAction)doneButtonAction:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *doneButton;
 
 @property (weak, nonatomic) IBOutlet MKMapView *setDestinationMapView;
 @property (nonatomic, strong) CLLocationManager *locationManager;

@@ -32,10 +32,6 @@
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
 
-    // Set up the navigation bar
-    UIBarButtonItem *saveButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveSettings)];
-    self.navigationItem.rightBarButtonItem = saveButton;
-    
     // Set up the distance picker view
     pickerDistanceArray = [[NSMutableArray alloc]init];
     fractionNumberArray = [[NSMutableArray alloc]init];
@@ -70,6 +66,9 @@
 {
     self.editingDestination.ringTone = @"AfricanFunLong";
     self.lblRingToneDisplay.text = @"AfricanFunLong";
+    self.editingDestination.miles = self.distanceSlider.value;
+    self.lblDistanceDisplay.text = [NSString stringWithFormat:@"%.2f miles from your destination", self.distanceSlider.value];
+    
 }
 
 #pragma mark - UIPicker view
@@ -343,4 +342,17 @@
     [self saveSettings];
 }
 
+- (IBAction)changeSlider:(id)sender {
+    self.editingDestination.miles = self.distanceSlider.value;
+    self.lblDistanceDisplay.text = [NSString stringWithFormat:@"%.2f miles from your destination", self.distanceSlider.value];
+    self.bottomViewLayer.hidden = YES;
+    
+}
 @end
+
+
+
+
+
+
+

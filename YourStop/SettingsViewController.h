@@ -15,10 +15,12 @@
 @interface SettingsViewController : UIViewController
 
 @property (nonatomic, strong) Destination *editingDestination;
+- (IBAction)changeSlider:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UITextField *txfLocationName;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerViewDistance;
 @property (weak, nonatomic) IBOutlet UIPickerView *pickerViewRingTone;
+@property (weak, nonatomic) IBOutlet UISlider *distanceSlider;
 
 @property (weak, nonatomic) IBOutlet UILabel *lblDistanceDisplay;
 @property (weak, nonatomic) IBOutlet UILabel *lblRingToneDisplay;

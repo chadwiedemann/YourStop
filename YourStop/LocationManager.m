@@ -21,7 +21,6 @@
 + (instancetype)sharedInstance
 {
     static id sharedInstance = nil;
-    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];
@@ -31,7 +30,6 @@
         instance.locationManager.desiredAccuracy = kCLLocationAccuracyBest; // you can use kCLLocationAccuracyHundredMeters to get better battery life
         instance.locationManager.pausesLocationUpdatesAutomatically = NO; // this is important
     });
-    
     return sharedInstance;
 }
 
@@ -69,7 +67,6 @@
 {
     CLLocation *mostRecentLocation = locations.lastObject;
     NSLog(@"Current location: %@ %@", @(mostRecentLocation.coordinate.latitude), @(mostRecentLocation.coordinate.longitude));
-    
     NSDate *now = [NSDate date];
     NSTimeInterval interval = 0;
     if (self.lastTimestamp) {

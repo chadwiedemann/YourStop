@@ -15,13 +15,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.2</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>The app will continue to run in the back ground</string>
+	<string>The app is using your location services to monitor your location so when you enter the region defined by the alarm parameters chosen it will activate the alarm to wake you up.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>so I can see your location</string>
 	<key>UIBackgroundModes</key>
