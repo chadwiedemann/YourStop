@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SetDestinationViewController">
             <connections>
+                <outlet property="doneButton" destination="Pnh-fe-g9r" id="gHG-MU-fCs"/>
                 <outlet property="setDestinationMapView" destination="dKT-HN-F4L" id="Sxf-0D-rBv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,15 +24,58 @@
                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKT-HN-F4L">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                 </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnh-fe-g9r">
+                    <rect key="frame" x="82" y="400" width="156" height="30"/>
+                    <color key="backgroundColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="156" id="A1V-E3-u33"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" title="Done"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="doneButtonAction:" destination="-1" eventType="touchUpInside" id="if8-wm-JB4"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7AE-4Z-foZ" customClass="IgnoreView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="redPin" translatesAutoresizingMaskIntoConstraints="NO" id="6WQ-tp-Z81">
+                            <rect key="frame" x="122.5" y="172.5" width="75" height="75"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="75" id="550-qf-c8h"/>
+                                <constraint firstAttribute="width" constant="75" id="Sk1-TM-m2I"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="6WQ-tp-Z81" firstAttribute="centerX" secondItem="7AE-4Z-foZ" secondAttribute="centerX" id="XOq-vl-4iK"/>
+                        <constraint firstItem="6WQ-tp-Z81" firstAttribute="centerY" secondItem="7AE-4Z-foZ" secondAttribute="centerY" constant="-30" id="ned-oX-WkI"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="7AE-4Z-foZ" secondAttribute="bottom" id="2Lj-qz-bV4"/>
                 <constraint firstItem="dKT-HN-F4L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="AfY-Vc-6BY"/>
+                <constraint firstAttribute="trailing" secondItem="7AE-4Z-foZ" secondAttribute="trailing" id="NT6-zI-Hzb"/>
+                <constraint firstItem="Pnh-fe-g9r" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="PnD-AF-b7a"/>
                 <constraint firstAttribute="bottom" secondItem="dKT-HN-F4L" secondAttribute="bottom" id="ZIV-fR-8cV"/>
+                <constraint firstItem="7AE-4Z-foZ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="c6b-3P-fkR"/>
+                <constraint firstItem="7AE-4Z-foZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nvo-L6-rmh"/>
                 <constraint firstAttribute="trailing" secondItem="dKT-HN-F4L" secondAttribute="trailing" id="qSE-3y-usy"/>
                 <constraint firstItem="dKT-HN-F4L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qdL-H7-58n"/>
+                <constraint firstAttribute="bottom" secondItem="Pnh-fe-g9r" secondAttribute="bottom" constant="50" id="vTO-mQ-5f9"/>
             </constraints>
             <point key="canvasLocation" x="33" y="54"/>
         </view>
     </objects>
+    <resources>
+        <image name="redPin" width="640" height="640"/>
+    </resources>
 </document>

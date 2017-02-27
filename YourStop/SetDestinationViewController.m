@@ -17,28 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.searchBar.delegate = self;
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(moveToSettingsVC)];
-    self.navigationItem.rightBarButtonItem = addButton;
     self.setDestinationMapView.showsUserLocation = YES;
     self.userLocation = self.locationManager.location.coordinate;
     self.setDestinationMapView.delegate = self;
     
     // Add Alert View to guide the user to use the pin drop
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Please hold down the pin, then drag and drop it to your destination." preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"Set destination" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [alert dismissViewControllerAnimated:YES completion:nil];
     }];
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
-    
-}
-
--(void)moveToSettingsVC
-{
-    SettingsViewController *settingsVC = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:nil];
-      NSLog(@"hello %f",self.destinationPin.coordinate.latitude);
-    settingsVC.editingDestination = self.destinationPin;
-    [self.navigationController pushViewController:settingsVC animated:YES];
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -47,7 +36,7 @@
     self.destinationPin = [[Destination alloc]initWithLocation:self.locationManager.location.coordinate];
         MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(self.userLocation, 800, 800);
         [self.setDestinationMapView setRegion:[self.setDestinationMapView regionThatFits:region] animated:YES];
-        [self.setDestinationMapView addAnnotation:self.destinationPin];
+//        [self.setDestinationMapView addAnnotation:self.destinationPin];
     }
 }
 
@@ -97,5 +86,49 @@ didChangeDragState:(MKAnnotationViewDragState)newState
     MKAnnotationView *ulv = [mapView viewForAnnotation:mapView.userLocation];
     ulv.hidden = YES;
 }
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated
+{
+    self.destinationPin.coordinate = mapView.centerCoordinate;
+    NSLog(@"screen moved and new latitude is %f", mapView.centerCoordinate.latitude);
+    if (mapChangedFromUserInteraction) {
+        // user changed map region
+        self.doneButton.hidden = NO;
+    }
+}
+
+- (IBAction)doneButtonAction:(id)sender {
+    SettingsViewController *settingsVC = [[SettingsViewController alloc]initWithNibName:@"SettingsViewController" bundle:nil];
+    NSLog(@"hello %f",self.destinationPin.coordinate.latitude);
+    settingsVC.editingDestination = self.destinationPin;
+    [self.navigationController pushViewController:settingsVC animated:YES];
+}
+
+//making the done button disapear when the map is moving
+
+- (BOOL)mapViewRegionDidChangeFromUserInteraction
+{
+    UIView *view = self.setDestinationMapView.subviews.firstObject;
+    //  Look through gesture recognizers to determine whether this region change is from user interaction
+    for(UIGestureRecognizer *recognizer in view.gestureRecognizers) {
+        if(recognizer.state == UIGestureRecognizerStateBegan || recognizer.state == UIGestureRecognizerStateEnded) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+static BOOL mapChangedFromUserInteraction = NO;
+
+- (void)mapView:(MKMapView *)mapView regionWillChangeAnimated:(BOOL)animated
+{
+    mapChangedFromUserInteraction = [self mapViewRegionDidChangeFromUserInteraction];
+    
+    if (mapChangedFromUserInteraction) {
+        self.doneButton.hidden = YES;
+    }
+}
+
 
 @end

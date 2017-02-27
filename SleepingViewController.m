@@ -33,11 +33,14 @@
             NSLog(@"something went wrong with userNotification");
         }
     }];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [LocationManager sharedInstance].delegate = self;
+
+    LocationManager *instance = [LocationManager sharedInstance];
+    instance.delegate = self;
     [[LocationManager sharedInstance] startUpdatingLocation];
     self.timeJustStarted = YES;
     //setting maxtime to 2.5 hours
@@ -58,7 +61,7 @@
         self.totalView.backgroundColor = [UIColor whiteColor];
         self.totalView.backgroundColor = [UIColor greenColor];
     } completion:nil];
-
+    
 }
 
 -(void) didUpdateLocation:(CLLocation *)location
@@ -102,6 +105,10 @@
         self.access = [DAO sharedInstanceOfDAO];
         self.access.isSleeping = YES;
     }
+    
+    double milesFromDestination = distance/1609.34;
+    self.distanceFromDestinationLabel.text = [NSString stringWithFormat: @"You are %.2f miles from", milesFromDestination];
+    self.locationLabel.text = [NSString stringWithFormat: @"%@",self.destination.destinationName ];
 }
 
 //this method just checks to see 2.5 hours has past since the alarm was created

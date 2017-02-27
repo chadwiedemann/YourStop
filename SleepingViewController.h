@@ -14,6 +14,7 @@
 
 
 @interface SleepingViewController : UIViewController <CLLocationManagerDelegate, CLLocationManagerDelegate, UIAlertViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @property (strong, nonatomic) IBOutlet UIView *totalView;
 @property (nonatomic, strong) Destination *destination;
@@ -25,5 +26,9 @@
 @property (nonatomic, strong) NSDate *startTime;
 @property NSTimeInterval maxTime;
 @property BOOL timeJustStarted;
+@property (weak, nonatomic) IBOutlet UILabel *distanceFromDestinationLabel;
+
+
+
 
 @end

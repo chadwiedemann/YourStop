@@ -32,14 +32,15 @@
 		20C24AB01DF0B0D3001B9565 /* InSearchOfAsia.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 20C24AAF1DF0B0D3001B9565 /* InSearchOfAsia.mp3 */; };
 		D83C0A0C1DC79B6F00B41470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0B1DC79B6F00B41470 /* main.m */; };
 		D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A0E1DC79B6F00B41470 /* AppDelegate.m */; };
-		D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A161DC79B6F00B41470 /* YourStop.xcdatamodeld */; };
 		D83C0A1A1DC79B6F00B41470 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D83C0A191DC79B6F00B41470 /* Assets.xcassets */; };
 		D83D6ACA1DDF8A8300DC35E7 /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = D83D6AC91DDF8A8300DC35E7 /* DAO.m */; };
 		D85114F51DCA8124002742EC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85114F41DCA8124002742EC /* MapKit.framework */; };
 		D85114F71DCA8137002742EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85114F61DCA8137002742EC /* CoreGraphics.framework */; };
 		D85114F91DCA8141002742EC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D85114F81DCA8141002742EC /* CoreLocation.framework */; };
+		D85D76181DF5EB0A002E5AA8 /* YourStop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D83C0A161DC79B6F00B41470 /* YourStop.xcdatamodeld */; };
 		D88605B41DE8E4D300288B93 /* DestinationMO+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D88605B11DE8E4D300288B93 /* DestinationMO+CoreDataClass.m */; };
 		D88605B51DE8E4D300288B93 /* DestinationMO+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = D88605B31DE8E4D300288B93 /* DestinationMO+CoreDataProperties.m */; };
+		D89D17391E5BA86D00059A35 /* IgnoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = D89D17381E5BA86D00059A35 /* IgnoreView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,8 @@
 		D88605B11DE8E4D300288B93 /* DestinationMO+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DestinationMO+CoreDataClass.m"; sourceTree = "<group>"; };
 		D88605B21DE8E4D300288B93 /* DestinationMO+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DestinationMO+CoreDataProperties.h"; sourceTree = "<group>"; };
 		D88605B31DE8E4D300288B93 /* DestinationMO+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DestinationMO+CoreDataProperties.m"; sourceTree = "<group>"; };
+		D89D17371E5BA86D00059A35 /* IgnoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IgnoreView.h; sourceTree = "<group>"; };
+		D89D17381E5BA86D00059A35 /* IgnoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IgnoreView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,8 @@
 				205E3F5A1DDB8FF100957764 /* Destination.m */,
 				D83D6AC81DDF8A8300DC35E7 /* DAO.h */,
 				D83D6AC91DDF8A8300DC35E7 /* DAO.m */,
+				D89D17371E5BA86D00059A35 /* IgnoreView.h */,
+				D89D17381E5BA86D00059A35 /* IgnoreView.m */,
 				D83C0A161DC79B6F00B41470 /* YourStop.xcdatamodeld */,
 				205E3F701DDBB15900957764 /* SettingsView */,
 				205E3F711DDBB18900957764 /* OpeningView */,
@@ -290,7 +295,7 @@
 				TargetAttributes = {
 					D83C0A061DC79B6F00B41470 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = P44YFW78FY;
+						DevelopmentTeam = HMWV6CCYQG;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -349,14 +354,15 @@
 			files = (
 				D88605B51DE8E4D300288B93 /* DestinationMO+CoreDataProperties.m in Sources */,
 				D83D6ACA1DDF8A8300DC35E7 /* DAO.m in Sources */,
+				D85D76181DF5EB0A002E5AA8 /* YourStop.xcdatamodeld in Sources */,
 				205E3F771DDBB20900957764 /* ConfirmDestinationViewController.m in Sources */,
 				205E3F641DDBB10000957764 /* DestinationTableViewController.m in Sources */,
 				205E3F691DDBB12900957764 /* SetDestinationViewController.m in Sources */,
 				D83C0A0F1DC79B6F00B41470 /* AppDelegate.m in Sources */,
 				20C24A981DED0C2A001B9565 /* LocationManager.m in Sources */,
+				D89D17391E5BA86D00059A35 /* IgnoreView.m in Sources */,
 				205E3F6E1DDBB15100957764 /* SettingsViewController.m in Sources */,
 				D88605B41DE8E4D300288B93 /* DestinationMO+CoreDataClass.m in Sources */,
-				D83C0A181DC79B6F00B41470 /* YourStop.xcdatamodeld in Sources */,
 				205E3F831DDBBA0E00957764 /* DestinationTableViewCell.m in Sources */,
 				205E3F5B1DDB8FF100957764 /* Destination.m in Sources */,
 				205E3F7D1DDBB26300957764 /* SleepingViewController.m in Sources */,
@@ -461,11 +467,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
-				DEVELOPMENT_TEAM = P44YFW78FY;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HMWV6CCYQG;
 				INFOPLIST_FILE = YourStop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Chad-Wiedemann-LLC.YourStop";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chadwiedemann.YourStop1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -473,11 +483,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
-				DEVELOPMENT_TEAM = P44YFW78FY;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HMWV6CCYQG;
 				INFOPLIST_FILE = YourStop/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Chad-Wiedemann-LLC.YourStop";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chadwiedemann.YourStop1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
